@@ -1,0 +1,18 @@
+<%
+//ページ個別の情報を読み込む
+const slug = 'top'
+const meta = conf[slug]
+%>
+<%-
+  include('../components/common/_header.ejs', {
+    slug: slug,
+  })
+-%>
+
+<div>TOPです。</div>
+
+<%-
+  include('../components/common/_footer.ejs', {
+    slug: slug,
+  })
+-%>

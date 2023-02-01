@@ -1,0 +1,29 @@
+/*================================
+	共通設定
+=================================*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: '游ゴシック体', 'Yu Gothic', YuGothic, sans-serif; font-weight: 500;
+  font-feature-settings : "palt"; 
+  letter-spacing : 0.04em;
+  color: #383a3c;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+body {
+  width: 100%;
+}

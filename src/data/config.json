@@ -1,0 +1,17 @@
+{
+  "common": {
+    "description": "ejsのテスト"
+  }
+  ,"top": {
+    "title": "ページTOP"
+    ,"page_url": "/"
+    ,"page_title": "TOP"
+    ,"page_class": "top"
+  }
+  ,"service": {
+    "title": "ページTOP | サービス"
+    ,"page_url": "/service/"
+    ,"page_title": "サービス"
+    ,"page_class": "service"
+  }
+}
