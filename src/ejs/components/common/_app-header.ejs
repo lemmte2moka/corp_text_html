@@ -1,0 +1,51 @@
+<%
+// サイト共通のデータ
+const data = conf.common;
+-%>
+
+<header class="l-header">
+  <div class="l-header__container">
+    <div class="l-header__wrapper">
+      <p class="l-header__logo">
+        <a href="/" class="l-header__logo-link"><img src="/assets/img/common/img_company_logo.png" alt="株式会社NATURAL WATER" class="l-header__logo-img"></a>
+      </p>
+      <nav class="l-header__nav is-pc">
+        <ul class="l-header__nav-list">
+          <%
+          for(let item of data.main_menu) {
+          -%>
+          <% if(item.megamenu) { -%>
+          <li class="l-header__nav-item js-megamenu">
+            <a href="<%= item.href %>" class="l-header__nav-link"><%= item.label %></a>
+            <div class="l-header__megamenu">
+              <div class="l-header__megamenu-container">
+                <ul class="l-header__megamenu-list">
+                  <%
+                  for(let megamenu of item.megamenu) {
+                  -%>
+                  <li class="l-header__megamenu-item">
+                    <a href="<%= megamenu.href %>" class="l-header__megamenu-link">
+                      <p class="l-header__megamenu-media"><img src="<%= megamenu.img %>" alt="<%= megamenu.label %>" class="l-header__megamenu-img"></p>
+                      <p class="l-header__megamenu-title"><%= megamenu.label %></p>
+                    </a>
+                  </li>
+                  <% } -%>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <% } else if(item.label === "お問合せ") { -%>
+          <li class="l-header__nav-item"><a href="<%= item.href %>" class="l-header__nav-link--contact"><span class="l-header__contact-text"><%= item.label %></span></a></li>
+          <% } else { -%>
+          <li class="l-header__nav-item"><a href="<%= item.href %>" class="l-header__nav-link"><%= item.label %></a></li>
+          <% } -%>
+          <% } -%>
+        </ul>
+        <div class="l-header__overlay js-overlay"></div>
+      </nav>
+      <%-
+      include('./_app-menu')
+      -%>
+    </div>
+  </div>
+</header>

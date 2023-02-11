@@ -1,0 +1,116 @@
+@use '../global';
+
+.l-footer {
+  margin-top: -30px;
+  border-top: 1px solid global.$border-color;
+
+  & .l-footer__body {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  & .l-footer__logo-media {
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  & .l-footer__logo-link {
+    @include global.transition(opacity);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  & .l-footer__main-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px 40px;
+    margin-top: 70px;
+  }
+
+  & .l-footer__main-item {
+    font-size: 1.6rem;
+    font-weight: global.$font-midium;
+  }
+
+  & .l-footer__main-link {
+    @include global.transition(color);
+
+    &:hover {
+      color: global.$site-color;
+    }
+  }
+
+  & .l-footer__sub-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 30px;
+    margin-top: 35px;
+  }
+
+  & .l-footer__sub-item {
+    font-size: 1.6rem;
+    font-weight: global.$font-midium;
+  }
+
+  & .l-footer__sub-link {
+    display: flex;
+    align-items: center;
+    @include global.transition(color);
+
+    &::after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      background: url(/assets/img/common/icon_window_blue.png) no-repeat;
+      background-size: cover;
+      margin-left: 10px;
+    }
+
+    &:hover {
+      color: global.$site-color;
+    }
+  }
+
+  & .l-footer__bottom {
+    border-top: 1px solid global.$border-color;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  & .l-footer__bottom-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 30px;
+  }
+
+  & .l-footer__bottom-item {
+    font-size: 1.4rem;
+    font-weight: global.$font-regular;
+    color: global.$text-gray;
+  }
+
+  & .l-footer__bottom-link {
+    @include global.transition(opacity);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  & .l-footer__copylight {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: global.$font-regular;
+    font-family: global.$font-roboto;
+    color: global.$text-gray;
+    margin-top: 30px;
+  }
+}

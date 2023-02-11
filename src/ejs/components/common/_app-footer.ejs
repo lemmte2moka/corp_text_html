@@ -1,0 +1,40 @@
+<%
+// ページ共通のデータ
+const data = conf.common;
+
+-%>
+
+<footer class="l-footer">
+  <div class="l-footer__body">
+    <div class="l-container">
+      <p class="l-footer__logo-media"><a href="/" class="l-footer__logo-link"><img src="/assets/img/common/img_company_logo.png" alt="" width="120" height="86" class="l-footer__logo-img"></a></p>
+      <ul class="l-footer__main-list">
+        <%
+        for(let item of data.footer_menu) {
+        -%>
+        <li class="l-footer__main-item"><a href="<%= item.href %>" class="l-footer__main-link"><%= item.label %></a></li>
+        <% } -%>
+      </ul>
+      <ul class="l-footer__sub-list">
+        <%
+        for(let item of data.footer_sub_menu) {
+        -%>
+        <li class="l-footer__sub-item"><a href="<%= item.href %>" target="_blank" class="l-footer__sub-link"><%= item.label %></a></li>
+        <% } -%>
+      </ul>
+    </div>
+    
+  </div>
+  <div class="l-footer__bottom">
+    <div class="l-container">
+      <ul class="l-footer__bottom-list">
+        <%
+        for(let item of data.footer_bottom_menu) {
+        -%>
+        <li class="l-footer__bottom-item"><a href="<%= item.href %>" class="l-footer__bottom-link"><%= item.label %></a></li>
+        <% } -%>
+      </ul>
+      <small class="l-footer__copylight">Copyright Natural Water Co. Ltd All rights reserve</small>
+    </div>
+  </div>
+</footer>

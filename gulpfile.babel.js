@@ -60,12 +60,15 @@ const paths = {
 
   ejs: {
     src: root.src + 'ejs/pages/**/*.ejs',
-    ignore: root.src + 'ejs/components/**/_*.ejs',
+    ignore: root.src + 'ejs/**/_*.ejs',
     dest: root.dist + ''
   },
 
   json: {
-    src: root.src + 'data/config.json'
+    config: root.src + 'data/config.json',
+    src: root.src + '**/*.json',
+    ignore: root.src + 'data/*.json',
+    dest: root.dist + ''
   },
 
   css: {
@@ -96,6 +99,18 @@ const paths = {
   server: 'dist/'
 }
 
+const other = {
+  src: [
+    root.src + '**/*.+(woff|woff2|ttf|otf)',
+    root.src + '**/*.+(php)',
+    root.src + '**/*.+(pdf)',
+    root.src + '**/*.+(xml)',
+    root.src + '**/*.+(mov|mp4|wmv|mpg)',
+    root.src + '**/*.+(ico)'
+  ],
+  dist: '',
+}
+
 // ----------------------------
 // 関数定義
 // ----------------------------
@@ -110,7 +125,7 @@ export function html() {
 
 // ejs コンパイル
 export function ejsCompile() {
-  const json_path = paths.json.src;
+  const json_path = paths.json.config;
   const conf = JSON.parse(fs.readFileSync(json_path));
   return gulp.src([paths.ejs.src, '!' + paths.ejs.ignore])
   .pipe(plumber())
@@ -207,6 +222,20 @@ export function fonts() {
   .pipe(gulp.dest(paths.font.dest))
 }
 
+// json move
+export function json() {
+  return gulp.src([paths.json.src, '!' + paths.json.ignore])
+  .pipe(plumber())
+  .pipe(newer(paths.json.dest))
+  .pipe(gulp.dest(paths.json.dest))
+}
+
+// other move
+export function copyOther() {
+  return gulp.src(other.src, {since: gulp.lastRun(copyOther)})
+  .pipe(gulp.dest(root.dist))
+}
+
 // dist配下を削除
 export function distDel(done) {
   del([root.dist + '**'])
@@ -241,18 +270,20 @@ export function reload(done) {
 //- 監視
 export function watch() {
   gulp.watch(paths.html.src, gulp.series(html, reload))
-  gulp.watch(paths.ejs.src, gulp.series(ejsCompile, reload))
+  gulp.watch([paths.ejs.src, paths.ejs.ignore], gulp.series(ejsCompile, reload))
   gulp.watch(paths.css.src, gulp.series(cssDev, reload))
   gulp.watch(paths.jsPlugin.src, gulp.series(jsPlugin, reload))
   gulp.watch(paths.js.src, gulp.series(jsDev, reload))
   gulp.watch(paths.img.src, gulp.series(images, reload))
   gulp.watch(paths.font.src, gulp.series(fonts, reload))
+  gulp.watch(other.src, gulp.series(copyOther, reload))
+  gulp.watch([paths.json.src, paths.json.ignore, paths.json.config], gulp.series(json, reload))
 }
 
 // ----------------------------
 // タスク定義
 // ----------------------------
-const runDev = gulp.series(gulp.parallel(cssDev, jsPlugin, jsDev, fonts, images, html, ejsCompile), server, watch);
+const runDev = gulp.series(gulp.parallel(cssDev, jsPlugin, jsDev, fonts, json, copyOther, images, html, ejsCompile), server, watch);
 const runBuild = gulp.series(distDel, gulp.parallel(cssBuild, jsPlugin, jsBuild, fonts, images, html, ejsCompile));
 
 exports.default = runDev;

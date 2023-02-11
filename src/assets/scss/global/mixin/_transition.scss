@@ -1,0 +1,6 @@
+@mixin transition($prop: '', $sec: 0.3, $easing: ease) {
+  transition: #{$sec}s $easing;
+  @if $prop != '' {
+    transition-property: $prop;
+  }
+}

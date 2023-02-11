@@ -1,17 +1,122 @@
 {
   "common": {
-    "description": "ejsのテスト"
+    "description": "株式会社NATURAL WATERのコーポレートサイトです。"
+    ,"main_menu": [
+      {
+        "label": "私たちについて"
+        ,"href": "/about/"
+        ,"megamenu": [
+          {
+            "label": "ごあいさつ"
+            ,"href": "/about/message/"
+            ,"img": "/assets/img/about/img_about_link_01.jpg"
+          }
+          ,{
+            "label": "会社理念"
+            ,"href": "/about/philosophy/"
+            ,"img": "/assets/img/about/img_about_link_03.jpg"
+          }
+          ,{
+            "label": "会社概要"
+            ,"href": "/about/profile/"
+            ,"img": "/assets/img/about/img_about_link_02.jpg"
+          }
+        ]
+      },
+      {
+        "label": "商品"
+        ,"href": "/product/"
+        ,"megamenu": [
+          {
+            "label": "一般商品"
+            ,"href": "/product/consumer/"
+            ,"img": "/assets/img/product/img_product_link_01.jpg"
+          }
+          ,{
+            "label": "法人商品"
+            ,"href": "/product/corporation/"
+            ,"img": "/assets/img/product/img_product_link_02.jpg"
+          }
+        ]
+      }
+      ,{
+        "label": "事業内容"
+        ,"href": "/service/"
+      }
+      ,{
+        "label": "採用情報"
+        ,"href": "/recruit/"
+      }
+      ,{
+        "label": "お問合せ"
+        ,"href": "/contact/"
+      }
+    ]
+    ,"footer_menu": [
+      {
+        "label": "私たちについて"
+        ,"href": "/about/"
+      },
+      {
+        "label": "商品"
+        ,"href": "/product/"
+      }
+      ,{
+        "label": "事業内容"
+        ,"href": "/service/"
+      }
+      ,{
+        "label": "採用情報"
+        ,"href": "/recruit/"
+      }
+    ]
+    ,"footer_sub_menu": [
+      {
+        "label": "研究開発"
+        ,"href": "/"
+      },
+      {
+        "label": "オンラインショップ"
+        ,"href": "/"
+      }
+      ,{
+        "label": "オウンドメディア"
+        ,"href": "/"
+      }
+      ,{
+        "label": "GLOBAL SITE"
+        ,"href": "/"
+      }
+    ]
+    ,"footer_bottom_menu": [
+      {
+        "label": "利用規約"
+        ,"href": "/"
+      },
+      {
+        "label": "クッキーポリシー"
+        ,"href": "/"
+      }
+      ,{
+        "label": "個人情報保護方針"
+        ,"href": "/"
+      }
+      ,{
+        "label": "メディアポリシー"
+        ,"href": "/"
+      }
+    ]
   }
   ,"top": {
-    "title": "ページTOP"
+    "title": "株式会社NATURAL WATER"
     ,"page_url": "/"
     ,"page_title": "TOP"
-    ,"page_class": "top"
+    ,"page_class": "p-top"
   }
   ,"service": {
     "title": "ページTOP | サービス"
     ,"page_url": "/service/"
     ,"page_title": "サービス"
-    ,"page_class": "service"
+    ,"page_class": "p-service"
   }
 }

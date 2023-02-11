@@ -1,6 +1,19 @@
+<%
+// ページ共通のデータ
+const data = conf.common;
+
+const page_meta = conf[slug]
+
+-%>
+
   </main>
-  <footer>
-    フッター
-  </footer>
+  <%-
+  include('./_app-footer', {
+    slug: slug,
+  })
+  -%>
+  <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/vendor/swiper.min.js"></script>
+  <script src="/assets/js/all.js"></script>
 </body>
 </html>

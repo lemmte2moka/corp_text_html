@@ -1,0 +1,62 @@
+<%
+// サイト共通のデータ
+const data = conf.common;
+-%>
+
+<div class="l-menu is-sp">
+  <div class="l-menu__drewer-box js-drower-box">
+    <span></span>
+    <span></span>
+  </div>
+  <div class="l-menu__drewer-content js-drower-content">
+    <nav class="l-menu__drewer-nav">
+      <ul class="l-menu__drewer-nav-list">
+        <%
+        for(let item of data.main_menu) {
+        -%>
+        <% if(item.megamenu) { -%>
+        <li class="l-menu__drewer-nav-item">
+          <div class="l-menu__drewer-nav-tap js-toggle">
+            <a href="<%= item.href %>" class="l-menu__drewer-nav-link"><%= item.label %></a>
+          </div>
+          <div class="l-menu__toggle-item js-toggle-item">
+            <div class="l-menu__toggle-container">
+              <ul class="l-menu__toggle-sub-list">
+                <%
+                for(let megamenu of item.megamenu) {
+                -%>
+                <li class="l-menu__toggle-sub-item">
+                  <a href="<%= megamenu.href %>" class="l-menu__toggle-sub-link"><%= megamenu.label %></a>
+                </li>
+                <% } -%>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <% } else if(item.label === "お問合せ") { -%>
+        <li class="l-menu__drewer-nav-item"><a href="<%= item.href %>" class="l-menu__drewer-nav-link--contact"><span class="l-menu__drewer-contact-text"><%= item.label %></span></a></li>
+        <% } else { -%>
+        <li class="l-menu__drewer-nav-item"><a href="<%= item.href %>" class="l-menu__drewer-nav-link"><%= item.label %></a></li>
+        <% } -%>
+        <% } -%>
+      </ul>
+      <ul class="l-menu__sub-list">
+        <%
+        for(let item of data.footer_sub_menu) {
+        -%>
+        <li class="l-menu__sub-item"><a href="<%= item.href %>" target="_blank" class="l-menu__sub-link"><%= item.label %></a></li>
+        <% } -%>
+      </ul>
+      <ul class="l-menu__bottom-list">
+        <%
+        for(let item of data.footer_bottom_menu) {
+        -%>
+        <li class="l-menu__bottom-item"><a href="<%= item.href %>" class="l-menu__bottom-link"><%= item.label %></a></li>
+        <% } -%>
+      </ul>
+      <div class="l-menu__close">
+        <button class="l-menu__close-button js-close-menu">閉じる</button>
+      </div>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+@use '../var/breakpoint';
+
+@mixin sp() {
+  @media screen and (max-width: map-get(breakpoint.$breakpoints, sp)) {
+    @content;
+  }
+}
+
+@mixin pc() {
+  @media screen and (min-width: map-get(breakpoint.$breakpoints, pc)) {
+    @content;
+  }
+}
+
+@mixin max_pc_sm() {
+  @media screen and (max-width: map-get(breakpoint.$breakpoints, max_pc_sm)) {
+    @content;
+  }
+}
+
+@mixin max_pc_md() {
+  @media screen and (max-width: map-get(breakpoint.$breakpoints, max_pc_md)) {
+    @content;
+  }
+}
+
+@mixin max_pc_lg() {
+  @media screen and (max-width: map-get(breakpoint.$breakpoints, max_pc_lg)) {
+    @content;
+  }
+}
