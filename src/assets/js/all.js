@@ -29,6 +29,7 @@ onLoad:function(){
   Common.anchorSmoothScroll();
   Common.accordion();
   Common.matchHeight();
+  Common.tab();
   Common.swiperSetting();
 	return Common;
 },
@@ -64,12 +65,6 @@ megamenuToggle:function(){
       e.target.classList.remove('is-open')
       _overLay.classList.remove('is-open')
     })
-  }
-  function megamenuOpen(e) {
-    var _currentTarget = e.currentTarget.querySelectorAll('.js-megamenu')
-    for(var i = 0; i < _currentTarget.length; i++) {
-      _currentTarget[i].classList.add('is-open')
-    }
   }
 },
 /*※2の関数------------------------------------------*/
@@ -290,27 +285,135 @@ matchHeight:function(){
   })
 },
 /*※2の関数------------------------------------------*/
+/*--------------------タブ-------------------*/
+tab:function(){
+  var $tabList = $('.js-tab-list');
+  if(!$tabList[0]) return
+
+  const tabContentToggle = (target) => {
+    const $target = $(target)
+    $target.siblings('.js-tab-content').removeClass('is-visible').removeAttr('style')
+    $target.fadeIn(() => {
+      $target.addClass('is-visible').removeAttr('style')
+    })
+  }
+  const $tabButton = $('.js-tab-button')
+  $tabButton.on('click', (e) => {
+    const $this = $(e.originalEvent.currentTarget)
+    const target = $this.data('target').split(',')
+    const $parentList = $this.parents('.js-tab-list')
+    const current_index = $parentList.children().index($this.parent())
+
+    const tabRelation = $this.data('relation')
+    const $tabGroup = $(tabRelation)
+    // アニメーション中は処理を受け付けないようにする
+    if ($('.js-tab-content').is(':animated') || $this.hasClass('is-active')) return
+
+    // タブボタンのアクティブ状態の切り替え
+    if ($tabGroup[0] && $parentList.hasClass(tabRelationClassName)) {
+      // 複数のタブを連動させる
+      $tabGroup.find('.js-tab-button').removeClass('is-active')
+      $tabGroup.each((index, element) => {
+        const $element = $(element)
+        $element.find('.js-tab-button').eq(current_index).addClass('is-active')
+      })
+    }
+    else {
+      // タブ単体で機能させる
+      $parentList.find('.js-tab-button').removeClass('is-active')
+      $this.addClass('is-active')
+    }
+
+    // タブコンテンツの切り替え
+    target.forEach((id) => {
+      tabContentToggle(id)
+    })
+
+  })
+
+  $tabList.each((index, element) => {
+    const $element = $(element)
+    const $tabButtonFirst = $element.find('.js-tab-button').eq(0)
+    $tabButtonFirst.addClass('is-active')
+    tabContentToggle($tabButtonFirst.data('target'))
+  })
+},
+/*※2の関数------------------------------------------*/
 /*--------------------swiperの設定-------------------*/
 swiperSetting:function(){
-  const swiperPick = new Swiper(".js-pick-swiper", {
-    loop: false,
+  const swiperTop = new Swiper(".js-top-swiper", {
+    loop: true,
     slidesPerView: "auto",
-    spaceBetween: 20,
-    centeredSlides: true,
+    // centeredSlides: true,
+    effect: "fade",
+    // autoplay: {
+    //   delay: 5000,
+    // },
+    speed: 1000,
+    // pagination: {
+    //   el: ".js-pick-pagenation",
+    //   clickable: true,
+    //   type: 'progressbar',
+    // },
+    // navigation: {
+    //   nextEl: ".js-pick-next",
+    //   prevEl: ".js-pick-prev"
+    // },
+    breakpoints: {
+      768: {
+        slidesPerView: "auto",
+        // initialSlide: 1,
+        centeredSlides: false,
+      }
+    }
+  });
+
+  const swiperNews = new Swiper(".js-news-swiper", {
+    loop: true,
+    slidesPerView: "auto",
+    // centeredSlides: true,
+    // autoplay: {
+    //   delay: 5000,
+    // },
     speed: 1000,
     pagination: {
-      el: ".js-pick-pagenation",
+      el: ".js-news-pagenation",
       clickable: true,
       type: 'progressbar',
     },
     navigation: {
-      nextEl: ".js-pick-next",
-      prevEl: ".js-pick-prev"
+      nextEl: ".js-news-next",
+      prevEl: ".js-news-prev"
     },
     breakpoints: {
       768: {
         slidesPerView: "auto",
-        spaceBetween: 30,
+        // initialSlide: 1,
+        centeredSlides: false,
+      }
+    }
+  });
+
+  const swiperProduct = new Swiper(".js-product-swiper", {
+    loop: true,
+    slidesPerView: "auto",
+    // centeredSlides: true,
+    // autoplay: {
+    //   delay: 5000,
+    // },
+    speed: 1000,
+    pagination: {
+      el: ".js-product-pagenation",
+      clickable: true,
+      type: 'progressbar',
+    },
+    navigation: {
+      nextEl: ".js-product-next",
+      prevEl: ".js-product-prev"
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: "auto",
         // initialSlide: 1,
         centeredSlides: false,
       }

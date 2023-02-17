@@ -12,15 +12,11 @@ html {
   font-family: global.$font-sans;
   letter-spacing : 0.04em;
   font-weight: global.$font-midium;
-  color: #383a3c;
+  color: global.$text-color;
 }
 
 body {
   
-}
-
-main {
-  height: 1000px;
 }
 
 a {

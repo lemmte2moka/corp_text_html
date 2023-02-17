@@ -7,12 +7,21 @@
   & .l-footer__body {
     padding-top: 70px;
     padding-bottom: 70px;
+
+    @include global.sp() {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
   }
 
   & .l-footer__logo-media {
     width: 120px;
     margin-left: auto;
     margin-right: auto;
+
+    @include global.sp() {
+      width: 100px;
+    }
   }
 
   & .l-footer__logo-link {
@@ -29,11 +38,21 @@
     justify-content: center;
     gap: 20px 40px;
     margin-top: 70px;
+
+    @include global.sp() {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 40px;
+    }
   }
 
   & .l-footer__main-item {
     font-size: 1.6rem;
     font-weight: global.$font-midium;
+
+    @include global.sp() {
+      font-size: 1.5rem;
+    }
   }
 
   & .l-footer__main-link {
@@ -50,11 +69,22 @@
     justify-content: center;
     gap: 0 30px;
     margin-top: 35px;
+
+    @include global.sp() {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px 0;
+      margin-top: 40px;
+    }
   }
 
   & .l-footer__sub-item {
     font-size: 1.6rem;
     font-weight: global.$font-midium;
+
+    @include global.sp() {
+      font-size: 1.4rem;
+    }
   }
 
   & .l-footer__sub-link {
@@ -88,12 +118,22 @@
     align-items: center;
     justify-content: center;
     gap: 0 30px;
+
+    @include global.sp() {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px 0;
+    }
   }
 
   & .l-footer__bottom-item {
     font-size: 1.4rem;
     font-weight: global.$font-regular;
     color: global.$text-gray;
+
+    @include global.sp() {
+      font-size: 1.3rem;
+    }
   }
 
   & .l-footer__bottom-link {
@@ -112,5 +152,11 @@
     font-family: global.$font-roboto;
     color: global.$text-gray;
     margin-top: 30px;
+
+
+    @include global.sp() {
+      justify-content: flex-start;
+      font-size: 1.1rem;
+    }
   }
 }

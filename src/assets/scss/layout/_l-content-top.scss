@@ -1,0 +1,10 @@
+@use '../global';
+
+.l-content-top {
+  margin-top: 90px;
+  width: 100%;
+
+  @include global.sp() {
+    margin-top: 60px;
+  }
+}

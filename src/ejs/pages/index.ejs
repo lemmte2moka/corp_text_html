@@ -2,6 +2,79 @@
 //ページ個別の情報を読み込む
 const slug = 'top'
 const meta = conf[slug]
+const top = [
+  {
+    pc_media: '/assets/img/top/img_mv_01.jpg',
+    sp_media: '/assets/img/top/img_mv_sp_01.jpg',
+    label: 'fv1'
+  },
+  {
+    pc_media: '/assets/img/top/img_mv_02.jpg',
+    sp_media: '/assets/img/top/img_mv_sp_02.jpg',
+    label: 'fv2'
+  },
+  {
+    pc_media: '/assets/img/top/img_mv_03.jpg',
+    sp_media: '/assets/img/top/img_mv_sp_03.jpg',
+    label: 'fv3'
+  }
+]
+
+const news = [
+  {
+    media: '/assets/img/top/img_news_item.jpg',
+    date: '2023.01.20',
+    tag: '会社情報',
+    title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
+  },
+  {
+    media: '/assets/img/top/img_news_item.jpg',
+    date: '2023.01.20',
+    tag: '新着お知らせ',
+    title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
+  },
+  {
+    media: '/assets/img/top/img_news_item.jpg',
+    date: '2023.01.20',
+    tag: '会社情報',
+    title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
+  },
+  {
+    media: '/assets/img/top/img_news_item.jpg',
+    date: '2023.01.20',
+    tag: '会社情報',
+    title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
+  },
+  {
+    media: '/assets/img/top/img_news_item.jpg',
+    date: '2023.01.20',
+    tag: '会社情報',
+    title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
+  }
+]
+
+const product = [
+  {
+    media: '/assets/img/top/img_product_01.png',
+    title: '商品1'
+  },
+  {
+    media: '/assets/img/top/img_product_01.png',
+    title: '商品2'
+  },
+  {
+    media: '/assets/img/top/img_product_01.png',
+    title: '商品3'
+  },
+  {
+    media: '/assets/img/top/img_product_01.png',
+    title: '商品4'
+  },
+  {
+    media: '/assets/img/top/img_product_01.png',
+    title: '商品5'
+  }
+]
 %>
 <%-
   include('../components/common/_header.ejs', {
@@ -9,7 +82,211 @@ const meta = conf[slug]
   })
 -%>
 
-<div>TOPです。aaa</div>
+<div class="l-content-top">
+  <div class="p-top__fv">
+    <div class="p-top__lead">
+      <h1 class="p-top__title">安全なお水を<br>あなたのもとへ</h1>
+    </div>
+    <div class="p-top__slider swiper-container js-top-swiper">
+      <div class="p-top__slider-list swiper-wrapper">
+        <%
+        for(let item of top) {
+        -%>
+        <div class="p-top__slider-item swiper-slide">
+          <picture class="p-top__slider-media">
+            <source srcset="<%= item.pc_media %>"  media="(min-width: 768px)">
+            <img src="<%= item.sp_media %>" alt="<%= item.label %>" width="1000" height="600" loading="eager" class="p-top__slider-img">
+          </picture>
+        </div>
+        <% } -%>
+      </div>
+    </div>
+  </div>
+  
+
+  <section class="l-section--lv2">
+    <div class="l-container">
+      <div class="c-sction-title">
+        <div class="c-sction-title__head">
+          <p class="c-head__ja--sub">ニュース</p>
+          <h2 class="c-head__en--main">News</h2>
+        </div>
+        <div class="c-button-link is-pc">
+          <p class="c-button-link__wrapper">
+            <a href="/news/" class="c-button-link__anchor">
+              <span class="c-button-link__label">News一覧</span>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="p-top__news-slider swiper-container js-news-swiper">
+        <div class="p-top__news-list swiper-wrapper">
+          <%
+          for(let item of news) {
+          -%>
+          <div class="p-top__news-item swiper-slide">
+            <p class="p-top__news-media"><img src="<%= item.media %>" alt="<%= item.title %>" width="380" height="240" loading="lazy" class="p-top__news-img"></p>
+            <div class="p-top__news-date-tag">
+              <p class="p-top__news-tag"><%= item.tag %></p>
+              <p class="p-top__news-date"><%= item.date %></p>
+            </div>
+            <p class="p-top__news-title"><%= item.title %></p>
+          </div>
+          <% } -%>
+        </div>
+        <div class="swiper-button-prev c-swiper__button--prev js-news-prev"></div>
+        <div class="swiper-button-next c-swiper__button--next js-news-next"></div>
+        <div class="swiper-pagination c-swiper__pagination js-news-pagination"></div>
+      </div>
+      <div class="c-button-link is-sp">
+        <p class="c-button-link__wrapper">
+          <a href="/news/" class="c-button-link__anchor">
+            <span class="c-button-link__label">News一覧</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="l-section--lv2 p-top__philosophy">
+    <video src="/assets/video/video_philosophy.mp4" autoplay loop poster="/assets/img/top/bg_about.jpg" class="p-top__philosophy-video"></video>
+    <p class="p-top__philosophy-title">PHILOSOPHY</p>
+    <div class="l-container">
+      <div class="c-sction-title">
+        <div class="c-sction-title__head--white">
+          <p class="c-head__ja--sub">ニュース</p>
+          <h2 class="c-head__en--main">News</h2>
+        </div>
+      </div>
+      <h3 class="c-head__ja--h3-white">安全で身体に良いお水をあなたのもとへ</h3>
+      <p class="c-text__normal--md-white">
+        日本の水源、水質を調査し、安全や鮮度を重要視したお水をお届けすることが私たちのモットーです。<br>
+        また、日本の美味しいお水を世界に発信していくことが日本の自然を推進する一歩と考え、<br>
+        これからも私たちの想いを発信し続けます。
+      </p>
+      <div class="c-button-link">
+        <p class="c-button-link__wrapper">
+          <a href="/news/" class="c-button-link__anchor--white">
+            <span class="c-button-link__label--white">News一覧</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="l-section--lv2">
+    <div class="l-container">
+      <div class="c-sction-title">
+        <div class="c-sction-title__head">
+          <p class="c-head__ja--sub">商品情報</p>
+          <h2 class="c-head__en--main">Products</h2>
+        </div>
+        <div class="c-button-link is-pc">
+          <p class="c-button-link__wrapper">
+            <a href="/product/" class="c-button-link__anchor">
+              <span class="c-button-link__label">商品情報</span>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="c-tab">
+        <ul class="c-tab__list js-tab-list js-effect-fade c-effect-fade">
+          <li class="c-tab__item"><button type="button" class="c-tab__button js-tab-button" data-target="#tab-content-1">一般向け商品</button></li>
+          <li class="c-tab__item"><button type="button" class="c-tab__button js-tab-button" data-target="#tab-content-2">法人向け商人</button></li>
+        </ul>
+        <div id="tab-content-1" class="c-tab__content js-tab-content">
+          <div class="p-top__product-slider swiper-container js-product-swiper">
+            <div class="p-top__product-list swiper-wrapper">
+              <%
+              for(let item of product) {
+              -%>
+              <div class="p-top__product-item swiper-slide">
+                <p class="p-top__product-media"><img src="<%= item.media %>" alt="<%= item.title %>" width="294" height="294" loading="lazy" class="p-top__product-img"></p>
+              </div>
+              <% } -%>
+            </div>
+            <div class="swiper-button-prev c-swiper__button--prev js-product-prev"></div>
+            <div class="swiper-button-next c-swiper__button--next js-product-next"></div>
+            <div class="swiper-pagination c-swiper__pagination js-product-pagination"></div>
+          </div>
+        </div>
+        <div id="tab-content-2" class="c-tab__content js-tab-content">
+          <p class="c-text__normal--md">購入できる場所から探す</p>
+        </div>
+      </div>
+      <div class="c-button-link is-sp">
+        <p class="c-button-link__wrapper">
+          <a href="/product/" class="c-button-link__anchor">
+            <span class="c-button-link__label">商品情報</span>
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="l-section--lv2">
+    <div class="l-container">
+      <div class="c-sction-title">
+        <div class="c-sction-title__head">
+          <p class="c-head__ja--sub">事業内容</p>
+          <h2 class="c-head__en--main">Service</h2>
+          <p class="c-text__normal--md">わたしたちの各事業をご紹介いたします。</p>
+        </div>
+      </div>
+
+      <div class="l-row">
+        <div class="l-col--2">
+          <h4 class="p-top__service-title">水質調査</h4>
+          <p class="c-text__normal--md">
+            みなさまへ安全な水をお届けするため、<br>
+            水源の水質調査や分部を調査しております。<br>
+            日本の豊富な資源を保護しつつ、<br>
+            安全面を追求しております。
+          </p>
+        </div>
+        <div class="l-col--2">
+          <p class="p-top__service-media"><img src="/assets/img/top/img_service_01.png" alt="水質調査" width="580" height="560" loading="lazy" class="p-top__service-img"></p>
+        </div>
+      </div>
+
+      <div class="l-row--reverse">
+        <div class="l-col--2">
+          <h4 class="p-top__service-title">商品開発</h4>
+          <p class="c-text__normal--md">
+            水質調査をもとに身体に良いお水を開発しております。<br>
+            お客様ひとりひとりのお身体を考え、成分の調整や、<br>
+            お体に合う配分を開発しております。
+          </p>
+        </div>
+        <div class="l-col--2">
+          <p class="p-top__service-media"><img src="/assets/img/top/img_service_02.png" alt="水質調査" width="580" height="560" loading="lazy" class="p-top__service-img"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="l-section--lv2">
+    <div class="p-top__other-links">
+      <div class="p-top__recruitment">
+        <a href="/recruit/">
+          <p class="p-top__other-title--sub">採用情報</p>
+          <p class="p-top__other-title">RECRUITMENT</p>
+        </a>
+      </div>
+      <div class="p-top__faq">
+        <a href="/faq">
+          <p class="p-top__other-title--sub">よくある質問</p>
+          <p class="p-top__other-title">FAQ</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
 
 <%-
   include('../components/common/_footer.ejs', {
