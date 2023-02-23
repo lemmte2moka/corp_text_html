@@ -1,0 +1,14 @@
+@use '../../global';
+@use './mixin';
+
+$prop: (
+  'overflow': 'overflow'
+);
+$modifier: (
+  'auto': 'auto',
+  'hidden': 'hidden',
+  'visible': 'visible',
+  'scroll': 'scroll'
+);
+
+@include mixin.utility($prop, $modifier);

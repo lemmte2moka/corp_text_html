@@ -1,0 +1,93 @@
+@use '../../../global';
+
+.p-top-news__slider {
+  overflow: visible;
+  margin-top: 50px;
+  padding-bottom: 80px;
+
+  @include global.sp() {
+    margin-top: 30px;
+    padding-bottom: 70px;
+  }
+
+  & .p-top-news__list {
+
+    & .p-top-news__item {
+      width: 360px;
+
+      @include global.sp() {
+        width: 240px;
+      }
+
+      & .p-top-news__link {
+        @include global.transition(opacity);
+
+        &:hover {
+          opacity: 0.7;
+          .p-top-news__img {
+            transform: scale(1.1);
+          }
+        }
+
+        & .p-top-news__media {
+          overflow: hidden;
+          border: 1px solid global.$border-color;
+          border-radius: 30px;
+
+          & .p-top-news__img {
+            @include global.transition(transform);
+          }
+        }
+
+        & .p-top-news__date-tag {
+          display: flex;
+          align-items: center;
+          gap: 0 10px;
+          margin-top: 10px;
+
+          & .p-top-news__date {
+            font-size: 1.6rem;
+            font-family: global.$font-roboto;
+            font-weight: global.$font-medium;
+
+            @include global.sp() {
+              font-size: 1.3rem;
+            }
+          }
+
+          & .p-top-news__tag {
+            font-size: 1.3rem;
+            font-weight: global.$font-regular;
+            border: 1px solid global.$tag-color;
+            border-radius: 15px;
+            padding: 3px 15px 4px;
+
+            @include global.sp() {
+              font-size: 1.1rem;
+              padding: 2px 15px 3px;
+            }
+          }
+        }
+
+        & .p-top-news__title {
+          font-size: 2rem;
+          line-height: global.$line-row;
+          margin-top: 15px;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+
+          @include global.sp() {
+            font-size: 1.8rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -23,30 +23,35 @@ const top = [
 const news = [
   {
     media: '/assets/img/top/img_news_item.jpg',
+    href: '/news/01/',
     date: '2023.01.20',
     tag: '会社情報',
     title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
   },
   {
     media: '/assets/img/top/img_news_item.jpg',
+    href: '/news/02/',
     date: '2023.01.20',
     tag: '新着お知らせ',
     title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
   },
   {
     media: '/assets/img/top/img_news_item.jpg',
+    href: '/news/03/',
     date: '2023.01.20',
     tag: '会社情報',
     title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
   },
   {
     media: '/assets/img/top/img_news_item.jpg',
+    href: '/news/04/',
     date: '2023.01.20',
     tag: '会社情報',
     title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
   },
   {
     media: '/assets/img/top/img_news_item.jpg',
+    href: '/news/05/',
     date: '2023.01.20',
     tag: '会社情報',
     title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
@@ -56,22 +61,27 @@ const news = [
 const product = [
   {
     media: '/assets/img/top/img_product_01.png',
+    href: '/product/01/',
     title: '商品1'
   },
   {
     media: '/assets/img/top/img_product_01.png',
+    href: '/product/02/',
     title: '商品2'
   },
   {
     media: '/assets/img/top/img_product_01.png',
+    href: '/product/03/',
     title: '商品3'
   },
   {
     media: '/assets/img/top/img_product_01.png',
+    href: '/product/04/',
     title: '商品4'
   },
   {
     media: '/assets/img/top/img_product_01.png',
+    href: '/product/05/',
     title: '商品5'
   }
 ]
@@ -83,19 +93,19 @@ const product = [
 -%>
 
 <div class="l-content-top">
-  <div class="p-top__fv">
-    <div class="p-top__lead">
-      <h1 class="p-top__title">安全なお水を<br>あなたのもとへ</h1>
+  <div class="p-top-fv">
+    <div class="p-top-fv__lead">
+      <h1 class="p-top-fv__title">安全なお水を<br>あなたのもとへ</h1>
     </div>
-    <div class="p-top__slider swiper-container js-top-swiper">
-      <div class="p-top__slider-list swiper-wrapper">
+    <div class="p-top-fv__slider swiper-container js-top-swiper">
+      <div class="p-top-fv__slider-list swiper-wrapper">
         <%
         for(let item of top) {
         -%>
-        <div class="p-top__slider-item swiper-slide">
-          <picture class="p-top__slider-media">
+        <div class="p-top-fv__slider-item swiper-slide">
+          <picture class="p-top-fv__slider-media">
             <source srcset="<%= item.pc_media %>"  media="(min-width: 768px)">
-            <img src="<%= item.sp_media %>" alt="<%= item.label %>" width="1000" height="600" loading="eager" class="p-top__slider-img">
+            <img src="<%= item.sp_media %>" alt="<%= item.label %>" width="1000" height="600" loading="eager" class="p-top-fv__slider-img">
           </picture>
         </div>
         <% } -%>
@@ -104,11 +114,11 @@ const product = [
   </div>
   
 
-  <section class="l-section--lv2">
+  <section class="l-section--lv2 u-overflow--hidden">
     <div class="l-container">
       <div class="c-sction-title">
         <div class="c-sction-title__head">
-          <p class="c-head__ja--sub">ニュース</p>
+          <p class="c-head__normal--sub">ニュース</p>
           <h2 class="c-head__en--main">News</h2>
         </div>
         <div class="c-button-link is-pc">
@@ -120,18 +130,20 @@ const product = [
         </div>
       </div>
 
-      <div class="p-top__news-slider swiper-container js-news-swiper">
-        <div class="p-top__news-list swiper-wrapper">
+      <div class="p-top-news__slider swiper-container js-news-swiper">
+        <div class="p-top-news__list swiper-wrapper">
           <%
           for(let item of news) {
           -%>
-          <div class="p-top__news-item swiper-slide">
-            <p class="p-top__news-media"><img src="<%= item.media %>" alt="<%= item.title %>" width="380" height="240" loading="lazy" class="p-top__news-img"></p>
-            <div class="p-top__news-date-tag">
-              <p class="p-top__news-tag"><%= item.tag %></p>
-              <p class="p-top__news-date"><%= item.date %></p>
-            </div>
-            <p class="p-top__news-title"><%= item.title %></p>
+          <div class="p-top-news__item swiper-slide">
+            <a href="<%= item.href %>" class="p-top-news__link">
+              <p class="p-top-news__media"><img src="<%= item.media %>" alt="<%= item.title %>" width="380" height="240" loading="lazy" class="p-top-news__img"></p>
+              <div class="p-top-news__date-tag">
+                <p class="p-top-news__date"><%= item.date %></p>
+                <p class="p-top-news__tag"><%= item.tag %></p>
+              </div>
+              <p class="p-top-news__title"><%= item.title %></p>
+            </a>
           </div>
           <% } -%>
         </div>
@@ -149,37 +161,37 @@ const product = [
     </div>
   </section>
 
-  <section class="l-section--lv2 p-top__philosophy">
-    <video src="/assets/video/video_philosophy.mp4" autoplay loop poster="/assets/img/top/bg_about.jpg" class="p-top__philosophy-video"></video>
-    <p class="p-top__philosophy-title">PHILOSOPHY</p>
-    <div class="l-container">
+  <section class="l-section--lv2 p-top-philosophy u-overflow--hidden">
+    <video src="/assets/video/video_philosophy.mp4" autoplay loop  class="p-top__philosophy-video"></video>
+    <p class="p-top-philosophy__title">PHILOSOPHY</p>
+    <div class="l-container p-top-philosophy__content">
       <div class="c-sction-title">
         <div class="c-sction-title__head--white">
-          <p class="c-head__ja--sub">ニュース</p>
-          <h2 class="c-head__en--main">News</h2>
+          <p class="c-head__normal--sub">私たちについて</p>
+          <h2 class="c-head__en--main">About</h2>
         </div>
       </div>
-      <h3 class="c-head__ja--h3-white">安全で身体に良いお水をあなたのもとへ</h3>
-      <p class="c-text__normal--md-white">
-        日本の水源、水質を調査し、安全や鮮度を重要視したお水をお届けすることが私たちのモットーです。<br>
-        また、日本の美味しいお水を世界に発信していくことが日本の自然を推進する一歩と考え、<br>
-        これからも私たちの想いを発信し続けます。
+      <h3 class="c-head__normal--h3-white p-top-philosophy__title--sub">安全で身体に良いお水を<br class="is-sp">あなたのもとへ</h3>
+      <p class="c-text__normal--md-white p-top-philosophy__text">
+        日本の水源、水質を調査し、<br class="is-sp">安全や鮮度を重要視したお水を<br class="is-sp">お届けすることが<br class="is-sp">私たちのモットーです。<br>
+        また、日本の美味しいお水を<br class="is-sp">世界に発信していくことが<br class="is-sp">日本の自然を推進する一歩と考え、<br>
+        これからも私たちの<br class="is-sp">想いを発信し続けます。
       </p>
       <div class="c-button-link">
-        <p class="c-button-link__wrapper">
-          <a href="/news/" class="c-button-link__anchor--white">
-            <span class="c-button-link__label--white">News一覧</span>
+        <p class="c-button-link__wrapper u-justify-content-sp--flex-start">
+          <a href="/about/" class="c-button-link__anchor--white">
+            <span class="c-button-link__label--white">私たちについて</span>
           </a>
         </p>
       </div>
     </div>
   </section>
 
-  <section class="l-section--lv2">
+  <section class="l-section--lv2 u-overflow--hidden">
     <div class="l-container">
       <div class="c-sction-title">
         <div class="c-sction-title__head">
-          <p class="c-head__ja--sub">商品情報</p>
+          <p class="c-head__normal--sub">商品情報</p>
           <h2 class="c-head__en--main">Products</h2>
         </div>
         <div class="c-button-link is-pc">
@@ -197,13 +209,15 @@ const product = [
           <li class="c-tab__item"><button type="button" class="c-tab__button js-tab-button" data-target="#tab-content-2">法人向け商人</button></li>
         </ul>
         <div id="tab-content-1" class="c-tab__content js-tab-content">
-          <div class="p-top__product-slider swiper-container js-product-swiper">
-            <div class="p-top__product-list swiper-wrapper">
+          <div class="p-top-product__slider swiper-container js-product-swiper">
+            <div class="p-top-product__list swiper-wrapper">
               <%
               for(let item of product) {
               -%>
-              <div class="p-top__product-item swiper-slide">
-                <p class="p-top__product-media"><img src="<%= item.media %>" alt="<%= item.title %>" width="294" height="294" loading="lazy" class="p-top__product-img"></p>
+              <div class="p-top-product__item swiper-slide">
+                <a href="<%= item.href %>" class="p-top-product__link">
+                  <p class="p-top-product__media"><img src="<%= item.media %>" alt="<%= item.title %>" width="294" height="294" loading="lazy" class="p-top-product__img"></p>
+                </a>
               </div>
               <% } -%>
             </div>
@@ -227,11 +241,11 @@ const product = [
     </div>
   </section>
 
-  <section class="l-section--lv2">
+  <section class="l-section--lv2 p-top-service">
     <div class="l-container">
       <div class="c-sction-title">
         <div class="c-sction-title__head">
-          <p class="c-head__ja--sub">事業内容</p>
+          <p class="c-head__normal--sub">事業内容</p>
           <h2 class="c-head__en--main">Service</h2>
           <p class="c-text__normal--md">わたしたちの各事業をご紹介いたします。</p>
         </div>
@@ -239,8 +253,8 @@ const product = [
 
       <div class="l-row">
         <div class="l-col--2">
-          <h4 class="p-top__service-title">水質調査</h4>
-          <p class="c-text__normal--md">
+          <h4 class="p-top-service__title">水質調査</h4>
+          <p class="c-text__normal--md u-line-height--high-lg">
             みなさまへ安全な水をお届けするため、<br>
             水源の水質調査や分部を調査しております。<br>
             日本の豊富な資源を保護しつつ、<br>
@@ -248,39 +262,45 @@ const product = [
           </p>
         </div>
         <div class="l-col--2">
-          <p class="p-top__service-media"><img src="/assets/img/top/img_service_01.png" alt="水質調査" width="580" height="560" loading="lazy" class="p-top__service-img"></p>
+          <p class="p-top-service__media"><img src="/assets/img/top/img_service_02.png" alt="水質調査" width="580" height="560" loading="lazy" class="p-top-service__img"></p>
         </div>
       </div>
 
       <div class="l-row--reverse">
         <div class="l-col--2">
-          <h4 class="p-top__service-title">商品開発</h4>
-          <p class="c-text__normal--md">
+          <h4 class="p-top-service__title">商品開発</h4>
+          <p class="c-text__normal--md u-line-height--high-lg">
             水質調査をもとに身体に良いお水を開発しております。<br>
             お客様ひとりひとりのお身体を考え、成分の調整や、<br>
             お体に合う配分を開発しております。
           </p>
         </div>
         <div class="l-col--2">
-          <p class="p-top__service-media"><img src="/assets/img/top/img_service_02.png" alt="水質調査" width="580" height="560" loading="lazy" class="p-top__service-img"></p>
+          <p class="p-top-service__media"><img src="/assets/img/top/img_service_01.png" alt="水質調査" width="580" height="560" loading="lazy" class="p-top-service__img"></p>
         </div>
       </div>
     </div>
   </section>
 
   <div class="l-section--lv2">
-    <div class="p-top__other-links">
-      <div class="p-top__recruitment">
-        <a href="/recruit/">
-          <p class="p-top__other-title--sub">採用情報</p>
-          <p class="p-top__other-title">RECRUITMENT</p>
+    <div class="p-top-other-links">
+      <div class="p-top-other-links__recruitment">
+        <a href="/recruit/" class="p-top-other-links__anchor">
+
         </a>
+        <div class="p-top-other-links__content">
+          <p class="p-top-other-links__title--sub">採用情報</p>
+          <p class="p-top-other-links__title">RECRUITMENT</p>
+        </div>
       </div>
-      <div class="p-top__faq">
-        <a href="/faq">
-          <p class="p-top__other-title--sub">よくある質問</p>
-          <p class="p-top__other-title">FAQ</p>
+      <div class="p-top-other-links__faq">
+        <a href="/faq" class="p-top-other-links__anchor">
+
         </a>
+        <div class="p-top-other-links__content">
+          <p class="p-top-other-links__title--sub">よくある質問</p>
+          <p class="p-top-other-links__title">FAQ</p>
+        </div>
       </div>
     </div>
   </div>

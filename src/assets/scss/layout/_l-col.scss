@@ -1,0 +1,11 @@
+@use '../global';
+
+.l-col {
+  &--2 {
+    width: calc(100% / 2 - 3%);
+
+    @include global.sp() {
+      width: 100%;
+    }
+  }
+}

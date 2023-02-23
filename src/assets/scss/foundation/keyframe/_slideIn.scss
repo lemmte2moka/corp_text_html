@@ -1,0 +1,17 @@
+@keyframes slideIn {
+  0% {
+    display: none;
+    visibility: hidden;
+    transform: translateX(100%);
+  }
+  1% {
+    display: block;
+    visibility: visible;
+    transform: translateX(100%);
+  }
+  100% {
+    display: block;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}

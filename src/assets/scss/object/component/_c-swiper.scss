@@ -1,0 +1,76 @@
+@use '../../global';
+
+.c-swiper__button {
+  &--prev,
+  &--next {
+    width: 50px;
+    height: 50px;
+    top: inherit;
+    bottom: 2px;
+
+    @include global.sp() {
+      width: 38px;
+      height: 38px;
+    }
+
+    &::after {
+      content: '';
+      width: 50px;
+      height: 50px;
+
+      @include global.sp() {
+        width: 38px;
+        height: 38px;
+      }
+    }
+  }
+
+  &--prev {
+    left: 0;
+    &::after {
+      background: url(/assets/img/common/icon_prev.png) no-repeat;
+
+      @include global.sp() {
+        background-size: cover;
+      }
+    }
+  }
+
+  &--next {
+    left: 65px;
+    right: inherit;
+
+    @include global.sp() {
+      left: 53px;
+    }
+    &::after {
+      background: url(/assets/img/common/icon_next.png) no-repeat;
+      @include global.sp() {
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.c-swiper__pagination {
+  top: inherit !important;
+  left: inherit !important;
+  bottom: 22px !important;
+  right: 0 !important;
+  width: 80% !important;
+  max-width: 1000px;
+  height: 1px !important;
+
+  @include global.sp() {
+    bottom: 20px !important;
+    width: 65% !important;
+    max-width: 230px;
+  }
+
+  .swiper-pagination-progressbar-fill {
+    height: 4px !important;
+    top: -1.5px !important;
+    background: global.$site-color;
+    border-radius: 1.5px;
+  }
+}

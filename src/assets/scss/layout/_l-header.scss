@@ -89,7 +89,7 @@
 
   & .l-header__nav-link {
     font-size: 1.6rem;
-    font-weight: global.$font-midium;
+    font-weight: global.$font-medium;
     @include global.transition(color);
 
     &:has(+ .l-header__megamenu) {
@@ -111,42 +111,46 @@
     &:hover {
       color: global.$site-color;
     }
+
+    &--contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border: 1px solid global.$site-light-color;
+      background-color: global.$site-light-color;
+      overflow: hidden;
+      width: 100px;
+      height: 52px;
+  
+      &:hover {
+        .l-header__contact-text {
+          color: global.$site-light-color;
+        }
+        &::before {
+          transform: translate(-50%,-50%) scale(4.2);
+        }
+      }
+  
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        background: global.$base-color;
+        transform: translate(-50%,-50%) scale(0);
+        @include global.transition(transform);
+      }
+    }
   }
 
-  & .l-header__nav-link--contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border: 1px solid global.$site-light-color;
-    background-color: global.$site-light-color;
-    overflow: hidden;
-    width: 100px;
-    height: 52px;
-
-    &:hover {
-      .l-header__contact-text {
-        color: global.$site-light-color;
-      }
-      &::before {
-        transform: translate(-50%,-50%) scale(4.2);
-      }
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      bottom: 0;
-      left: 50%;
-      right: 0;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      background: global.$base-color;
-      transform: translate(-50%,-50%) scale(0);
-      @include global.transition(transform);
-    }
+  & .l-header__nav-link {
+    
   }
 
   & .l-header__contact-text {
@@ -158,7 +162,7 @@
   }
 
   & .l-header__megamenu {
-    opacity: 0;
+    // opacity: 0;
     visibility: hidden;
     position: absolute;
     top: 90px;

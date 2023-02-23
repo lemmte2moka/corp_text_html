@@ -369,15 +369,13 @@ swiperSetting:function(){
   });
 
   const swiperNews = new Swiper(".js-news-swiper", {
-    loop: true,
+    loop: false,
     slidesPerView: "auto",
     // centeredSlides: true,
-    // autoplay: {
-    //   delay: 5000,
-    // },
+    spaceBetween: 30,
     speed: 1000,
     pagination: {
-      el: ".js-news-pagenation",
+      el: ".js-news-pagination",
       clickable: true,
       type: 'progressbar',
     },
@@ -388,22 +386,19 @@ swiperSetting:function(){
     breakpoints: {
       768: {
         slidesPerView: "auto",
-        // initialSlide: 1,
+        spaceBetween: 50,
         centeredSlides: false,
       }
     }
   });
 
   const swiperProduct = new Swiper(".js-product-swiper", {
-    loop: true,
+    loop: false,
     slidesPerView: "auto",
-    // centeredSlides: true,
-    // autoplay: {
-    //   delay: 5000,
-    // },
+    spaceBetween: 30,
     speed: 1000,
     pagination: {
-      el: ".js-product-pagenation",
+      el: ".js-product-pagination",
       clickable: true,
       type: 'progressbar',
     },
@@ -414,7 +409,7 @@ swiperSetting:function(){
     breakpoints: {
       768: {
         slidesPerView: "auto",
-        // initialSlide: 1,
+        spaceBetween: 60,
         centeredSlides: false,
       }
     }

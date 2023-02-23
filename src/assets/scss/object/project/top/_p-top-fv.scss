@@ -1,19 +1,17 @@
-@use '../global';
+@use '../../../global';
 
-.p-top {
-  & .p-top__fv{
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    width: 100%;
-    height: 600px;
+.p-top-fv {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+  height: 600px;
 
-    @include global.sp() {
-      height: 500px;
-    }
+  @include global.sp() {
+    height: 500px;
   }
 
-  & .p-top__lead {
+  & .p-top-fv__lead {
     position: absolute;
     top: 50%;
     left: 6%;
@@ -25,7 +23,7 @@
     }
   }
 
-  & .p-top__title {
+  & .p-top-fv__title {
     font-size: 60px;
     font-family: global.$font-serif;
     line-height: global.$line-row;
@@ -37,7 +35,7 @@
     }
   }
 
-  & .p-top__slider {
+  & .p-top-fv__slider {
     width: 79%;
     margin-right: inherit !important;
 
@@ -46,12 +44,12 @@
     }
   }
 
-  & .p-top__slider-media {
+  & .p-top-fv__slider-media {
     width: 100%;
     object-fit: cover;
   }
 
-  & .p-top__slider-img {
+  & .p-top-fv__slider-img {
     width: 100%;
     height: 100%;
     object-fit: cover;

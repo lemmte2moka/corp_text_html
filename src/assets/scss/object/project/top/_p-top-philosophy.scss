@@ -1,0 +1,58 @@
+@use '../../../global';
+
+.p-top-philosophy {
+  width: 100%;
+  position: relative;
+  & .p-top__philosophy-video {
+    width: 100%;
+    min-height: 800px;
+    position: relative;
+    object-fit: cover;
+  }
+
+  & .p-top-philosophy__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding-top: 100px;
+  }
+
+  & .p-top-philosophy__title {
+    position: absolute;
+    bottom: -17px;
+    left: 50%;
+    font-size: 22rem;
+    font-family: global.$font-roboto;
+    color: global.$base-color;
+    opacity: 0.6;
+    transform: translate(-50%,-50%);
+
+    @include global.max_pc_md() {
+      font-size: 16rem;
+      bottom: 32px;
+    }
+
+    @include global.sp() {
+      bottom: inherit;
+      left: inherit;
+      top: 38%;
+      right: -83%;
+      font-size: 12rem;
+      transform: rotate(90deg)
+    }
+
+    &--sub {
+      margin-top: 40px;
+    }
+  }
+
+  & .p-top-philosophy__text {
+    line-height: global.$line-high;
+
+    @include global.sp() {
+      margin-top: 30px;
+    }
+    
+  }
+}

@@ -1,0 +1,21 @@
+@use '../../global';
+
+@mixin utility($prop, $modifier) {
+  @each $prop_name, $class_name in $prop {
+    @each $key, $value in $modifier {
+      .u-#{$class_name}--#{$key} {
+        #{$prop_name}: #{$value} !important;
+      }
+    }
+
+    @each $breakpoint_name, $breakpoint_value in global.$breakpoints {
+      @media (max-width: $breakpoint_value) {
+        @each $key, $value in $modifier {
+          .u-#{$class_name}-#{$breakpoint_name}--#{$key} {
+            #{$prop_name}: #{$value} !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@use '../global';
+
+.l-scroll-top {
+  position: sticky;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+  margin-left: auto;
+  cursor: pointer;
+  visibility: hidden;
+  z-index: 20;
+
+  @include global.sp() {
+    right: 20px;
+    margin-top: -30px;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__img {
+    @include global.transition();
+    &:hover {
+      transform: translateY(-5px);
+      
+    }
+  }
+
+  &.is-visible {
+    visibility: visible;
+  }
+
+  &.is-leave {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    animation: fadeOut 0.01s;
+  }
+
+  &.is-enter {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: painted;
+    animation: fadeIn 0.4s;
+  }
+}

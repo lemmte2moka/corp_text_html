@@ -4,6 +4,10 @@
   margin-top: -30px;
   border-top: 1px solid global.$border-color;
 
+  @include global.sp() {
+    margin-top: -20px;
+  }
+
   & .l-footer__body {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -48,7 +52,7 @@
 
   & .l-footer__main-item {
     font-size: 1.6rem;
-    font-weight: global.$font-midium;
+    font-weight: global.$font-medium;
 
     @include global.sp() {
       font-size: 1.5rem;
@@ -80,7 +84,7 @@
 
   & .l-footer__sub-item {
     font-size: 1.6rem;
-    font-weight: global.$font-midium;
+    font-weight: global.$font-medium;
 
     @include global.sp() {
       font-size: 1.4rem;

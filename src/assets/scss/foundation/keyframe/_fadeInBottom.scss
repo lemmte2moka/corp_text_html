@@ -1,0 +1,17 @@
+@keyframes fadeInBottom {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    display: block;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

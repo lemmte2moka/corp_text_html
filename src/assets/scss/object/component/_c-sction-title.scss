@@ -1,0 +1,20 @@
+@use '../../global';
+
+.c-sction-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > * {
+    margin-top: 0;
+  }
+
+}
+
+.c-sction-title__head {
+  &--white {
+    [class^="c-head"] {
+      color: global.$base-color;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@use '../../global';
+
+%c-head__normal {
+  font-family: global.$font-sans;
+  font-weight: global.$font-medium;
+  line-height: global.$line-row;
+}
+
+%c-head__en {
+  font-family: global.$font-roboto;
+  font-weight: global.$font-medium;
+  line-height: global.$line-row;
+}
+
+.c-head {
+
+}
+
+.c-head__normal {
+  @extend %c-head__normal;
+
+  &--sub {
+    @extend %c-head__normal;
+    font-size: 1.7rem;
+    color: global.$site-color;
+
+    @include global.sp() {
+      font-size: 1.5rem;
+    }
+  }
+
+  &--h3-white {
+    @extend %c-head__normal;
+    font-size: 3.2rem;
+    color: global.$base-color;
+    font-weight: global.$font-regular;
+
+    @include global.sp() {
+      font-size: 2rem;
+      line-height: global.$line-high;
+    }
+
+  }
+}
+
+.c-head__en {
+  @extend %c-head__en;
+
+  &--main {
+    @extend %c-head__en;
+    font-size: 6rem;
+
+    @include global.sp() {
+      font-size: 4rem;
+    }
+  }
+}
+
+[class^="c-head__normal"] + [class^="c-head__en"] {
+  // margin-top: 10px;
+}
+
+[class^="c-head"] + [class^="c-text"] {
+  margin-top: 20px;
+}

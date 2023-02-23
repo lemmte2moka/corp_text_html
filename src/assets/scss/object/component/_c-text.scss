@@ -1,0 +1,27 @@
+@use '../../global';
+
+%c-text {
+  margin-top: 40px;
+}
+
+.c-text {
+
+}
+
+.c-text__normal {
+
+  &--md {
+    @extend %c-text;
+    font-size: 1.6rem;
+    color: global.$text-color;
+    line-height: global.$line-medium;
+  }
+
+
+  &--md-white {
+    @extend %c-text;
+    font-size: 1.6rem;
+    color: global.$base-color;
+    line-height: global.$line-medium;
+  }
+}

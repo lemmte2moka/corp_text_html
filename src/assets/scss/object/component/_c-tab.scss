@@ -1,0 +1,74 @@
+@use '../../global';
+
+.c-tab-wrapper {
+  margin-top: 80px;
+
+  @include global.sp() {
+    margin-top: 60px;
+  }
+}
+
+.c-tab {
+  margin-top: 50px;
+
+  @include global.sp() {
+    margin-top: 30px;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+
+  &__button {
+    font-size: 1.8rem;
+    font-weight: global.$font-regular;
+    letter-spacing: 0.05em;
+    padding-bottom: 15px;
+    opacity: 0.6;
+    @include global.transition(opacity);
+
+    &.is-active {
+      color: global.$bold-color;
+      font-weight: global.$font-medium;
+      border-bottom: 2px solid global.$bold-color;
+      opacity: 1;
+    }
+
+    &:hover {
+      font-weight: global.$font-medium;
+      opacity: 1;
+    }
+
+    @include global.sp() {
+      font-size: 1.4rem;
+      line-height: global.$line-row;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__content {
+    display: none;
+    margin-top: 50px;
+
+    @include global.sp() {
+      margin-top: 30px;
+    }
+  
+    &.is-visible {
+      display: block;
+    }
+
+    & > [class]:first-child {
+      margin-top: 0;
+    }
+
+  }
+}

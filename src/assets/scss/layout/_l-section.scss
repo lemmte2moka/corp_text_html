@@ -1,0 +1,19 @@
+@use '../global';
+
+.l-section {
+
+  &--lv2 {
+    width: 100%;
+    padding-top: 160px;
+    padding-bottom: 160px;
+
+    @include global.sp() {
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+  }
+}
+
+[class^="l-section"] + [class^="l-section"] {
+  padding-top: 0;
+}

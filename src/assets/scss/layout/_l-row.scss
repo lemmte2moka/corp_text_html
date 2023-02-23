@@ -1,0 +1,26 @@
+@use '../global';
+
+.l-row {
+  display: flex;
+  gap: 50px 6%;
+  margin-top: 50px;
+
+  @include global.sp() {
+    gap: 40px 0;
+    flex-direction: column-reverse;
+    margin-top: 40px;
+  }
+
+  &--reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 50px 6%;
+    margin-top: 50px;
+
+    @include global.sp() {
+      gap: 40px 0;
+      flex-direction: column-reverse;
+      margin-top: 40px;
+    }
+  }
+}

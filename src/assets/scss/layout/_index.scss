@@ -1,3 +1,5 @@
+@use './l-col';
+
 @use './l-container';
 
 @use './l-content-top';
@@ -7,3 +9,9 @@
 @use './l-header';
 
 @use './l-menu';
+
+@use './l-row';
+
+@use './l-scroll-top';
+
+@use './l-section';
