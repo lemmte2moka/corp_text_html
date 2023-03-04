@@ -6,6 +6,12 @@
   line-height: global.$line-row;
 }
 
+%c-head__ja {
+  font-family: global.$font-serif;
+  font-weight: global.$font-medium;
+  line-height: global.$line-row;
+}
+
 %c-head__en {
   font-family: global.$font-roboto;
   font-weight: global.$font-medium;
@@ -29,6 +35,18 @@
     }
   }
 
+  &--h3 {
+    @extend %c-head__normal;
+    font-size: 3.2rem;
+    color: global.$bold-color;
+    font-weight: global.$font-medium;
+
+    @include global.sp() {
+      font-size: 2rem;
+    }
+
+  }
+
   &--h3-white {
     @extend %c-head__normal;
     font-size: 3.2rem;
@@ -40,6 +58,18 @@
       line-height: global.$line-high;
     }
 
+  }
+}
+
+.c-head__ja {
+  &--lower {
+    @extend %c-head__ja;
+    font-size: 5.2rem;
+    color: global.$title-color;
+
+    @include global.sp() {
+      font-size: 3.2rem;
+    }
   }
 }
 
@@ -60,6 +90,6 @@
   // margin-top: 10px;
 }
 
-[class^="c-head"] + [class^="c-text"] {
+[class^="c-head"] + [class] {
   margin-top: 20px;
 }

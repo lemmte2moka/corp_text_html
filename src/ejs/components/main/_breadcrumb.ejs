@@ -1,0 +1,16 @@
+<%
+// ページ共通のデータ
+const data = conf.common;
+
+const page_meta = conf[slug]
+
+-%>
+<div class="l-breadcrumb">
+  <ul class="l-breadcrumb__list">
+    <%
+    for(let item of page_meta.breadcrumb) {
+    -%>
+    <li class="l-breadcrumb__item"><a href="<%= item.href %>" class="l-breadcrumb__link"><%= item.label %></a></li>
+    <% } -%>
+  </ul>
+</div>

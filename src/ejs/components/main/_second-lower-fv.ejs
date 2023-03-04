@@ -1,0 +1,30 @@
+<%
+// ページ共通のデータ
+const data = conf.common;
+
+const page_meta = conf[slug]
+
+-%>
+
+<div class="l-fv">
+  <div class="l-fv__content">
+    <div class="l-container">
+      <%-
+      include('./_breadcrumb', {
+        page_meta: page_meta,
+      })
+      -%>
+      <div class="l-fv__titles">
+        <p class="l-fv__sub-title"><%= page_meta.fv_image_sub_title %></p>
+        <h1 class="l-fv__title"><%= page_meta.fv_image_title %></h1>
+      </div>
+    </div>
+  </div>
+  <div class="l-fv__media">
+    <picture>
+      <source srcset="<%= page_meta.fv_image_pc %>" media="(min-width: 768px)">
+      <img src="<%= page_meta.fv_image_pc %>" alt="<%= page_meta.fv_image_sub_title %>" class="l-fv__media-img">
+    </picture>
+  </div>
+
+</div>

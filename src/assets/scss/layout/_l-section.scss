@@ -12,8 +12,27 @@
       padding-bottom: 90px;
     }
   }
+
+  &--lv3 {
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    @include global.sp() {
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+  }
 }
 
 [class^="l-section"] + [class^="l-section"] {
   padding-top: 0;
+}
+
+[class^="l-section"]:last-child {
+  padding-bottom: 200px;
+
+  @include global.sp() {
+    padding-bottom: 120px;
+  }
 }

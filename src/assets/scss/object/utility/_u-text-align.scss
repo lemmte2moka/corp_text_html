@@ -1,0 +1,13 @@
+@use '../../global';
+@use './mixin';
+
+$prop: (
+  'text-align': 'text-align'
+);
+$modifier: (
+  'left': 'left',
+  'center': 'center',
+  'right': 'right',
+);
+
+@include mixin.utility($prop, $modifier);

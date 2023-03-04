@@ -1,0 +1,83 @@
+<%
+//ページ個別の情報を読み込む
+const slug = 'about-philosophy'
+const meta = conf[slug]
+%>
+<%-
+  include('../../../components/common/_header.ejs', {
+    slug: slug,
+  })
+-%>
+
+<div class="l-content-top--lower">
+  <div class="l-container">
+    <%-
+    include('../../../components/main/_third-lower-fv.ejs', {
+      slug: slug,
+    })
+    -%>
+  </div>
+</div>
+
+<div class="l-section--lv2">
+  <div class="l-container">
+    <picture>
+      <source srcset="/assets/img/about/img_about_philosophy.png" media="(min-width: 768px)">
+      <img src="/assets/img/about/img_about_philosophy_sp.png" alt="NATURAL WATER FOR YOU" class="p-about__main-img">
+    </picture>
+  </div>
+</div>
+
+<div class="l-section--lv2">
+  <div class="l-container">
+    <p class="c-text__normal--md">
+      NATURAL WATERは、安全面を考慮したお水を提供する、世界中のお客様のライフパートナーです。お客様の生活を支えるため、研究し、貢献し、想像し続け
+      ること、それが私たちの使命です。<br>
+      ここで私たちについてご紹介いたします。
+    </p>
+    <div class="c-anchor-list">
+      <ul class="c-anchor-list__list">
+        <li class="c-anchor-list__item"><a href="#anc-01" class="c-anchor-list__link">社名の由来</a></li>
+        <li class="c-anchor-list__item"><a href="#anc-02" class="c-anchor-list__link">スローガン</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section class="l-section--lv3">
+  <div class="l-container">
+    <h2 id="anc-01" class="c-head__ja--h2">社名の由来</h2>
+    <p class="c-text__normal--md u-line-height--high-lg">
+      NATURAL WATERは、そのままの意味で「天然水」の意味と自然を保護するという意味が込めれております。<br>
+      <span class="u-color--red">自然なままでかつお客様に安心してお召し上がりいただけるよう研究開発を進めております。</span>
+    </p>
+  </div>
+</section>
+
+<section class="l-section--lv3">
+  <div class="l-container">
+    <p class="c-text__normal--md">
+      NATURAL WATERは、安全面を考慮したお水を提供する、世界中のお客様のライフパートナーです。お客様の生活を支えるため、研究し、貢献し、想像し続け
+      ること、それが私たちの使命です。<br>
+      ここで私たちについてご紹介いたします。
+    </p>
+    <div class="c-anchor-list">
+      <ul class="c-anchor-list__list">
+        <li class="c-anchor-list__item"><a href="#anc-01" class="c-anchor-list__link">社名の由来</a></li>
+        <li class="c-anchor-list__item"><a href="#anc-02" class="c-anchor-list__link">スローガン</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<%-
+include('../../../components/main/_excursion-link.ejs', {
+  slug: slug,
+})
+-%>
+
+<%-
+  include('../../../components/common/_footer.ejs', {
+    slug: slug,
+  })
+-%>

@@ -1,0 +1,16 @@
+<%
+// ページ共通のデータ
+const data = conf.common;
+
+const page_meta = conf[slug]
+
+-%>
+
+<div class="l-fv--third">
+  <%-
+  include('./_breadcrumb', {
+    page_meta: page_meta,
+  })
+  -%>
+  <h1 class="c-head__ja--lower"><%= page_meta.page_title %></h1>
+</div>

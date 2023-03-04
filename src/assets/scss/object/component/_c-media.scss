@@ -1,0 +1,11 @@
+@use '../../global';
+
+.c-media {
+  text-align: center;
+  margin-top: 60px;
+  max-width: 100%;
+
+  @include global.sp() {
+    margin-top: 40px;
+  }
+}

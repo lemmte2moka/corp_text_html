@@ -7,4 +7,31 @@
   @include global.sp() {
     margin-top: 60px;
   }
+
+  &--lower {
+    margin-top: 90px;
+    width: 100%;
+  
+    @include global.sp() {
+      margin-top: 60px;
+    }
+  }
+}
+
+.l-content-top--lower + [class^="l-section"] {
+  padding-top: 120px;
+
+  @include global.sp() {
+    padding-top: 80px;
+  }
+}
+
+.l-content-top--lower {
+  .c-head__ja--lower {
+    margin-top: 80px;
+
+    @include global.sp() {
+      margin-top: 60px;
+    }
+  }
 }

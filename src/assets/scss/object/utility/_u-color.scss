@@ -1,0 +1,15 @@
+@use '../../global';
+@use './mixin';
+
+$prop: (
+  'color': 'color'
+);
+$modifier: (
+  'black': global.$text-color,
+  'red': global.$accent-color,
+  'white': global.$base-color,
+  'bold': global.$bold-color,
+  'blue': global.$site-color,
+);
+
+@include mixin.utility($prop, $modifier);

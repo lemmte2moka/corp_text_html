@@ -1,0 +1,63 @@
+<%
+//ページ個別の情報を読み込む
+const slug = 'about'
+const meta = conf[slug]
+%>
+<%-
+  include('../../components/common/_header.ejs', {
+    slug: slug,
+  })
+-%>
+
+<div class="l-content-top">
+  <%-
+  include('../../components/main/_second-lower-fv.ejs', {
+    slug: slug,
+  })
+  -%>
+  
+</div>
+
+<section class="l-section--lv2">
+  <div class="l-container">
+    <div class="p-about__main">
+      <picture>
+        <source srcset="/assets/img/about/img_about_philosophy.png" media="(min-width: 768px)">
+        <img src="/assets/img/about/img_about_philosophy_sp.png" alt="NATURAL WATER FOR YOU" class="p-about__main-img">
+      </picture>
+      <div class="p-about__main-content">
+        <p class="c-text__normal--md u-line-height--high-lg">
+          私たちは人々のため、<br>
+          常に安全で美味しい<br>
+          お水を作り続けています。<br>
+          日本の美味しいお水を<br>
+          世界に発信し、日本に貢献し、<br>
+          創造し続けることが私たちの使命です。
+        </p>
+        <div class="c-button-link">
+          <p class="c-button-link__wrapper">
+            <a href="/about/philosophy/" class="c-button-link__anchor">
+              <span class="c-button-link__label">会社理念</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="l-section--lv2">
+  <div class="l-container">
+    <%-
+    include('../../components/main/_media_link.ejs', {
+      slug: slug,
+    })
+    -%>
+  </div>
+</section>
+
+<%-
+  include('../../components/common/_footer.ejs', {
+    slug: slug,
+  })
+-%>

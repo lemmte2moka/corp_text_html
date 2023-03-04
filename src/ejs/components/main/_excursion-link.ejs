@@ -1,0 +1,41 @@
+<%
+// ページ共通のデータ
+const data = conf.common;
+
+const page_meta = conf[slug]
+
+-%>
+
+<div class="l-excursion-link">
+  <div class="l-container">
+    <div class="l-excursion-link__content">
+      <div class="l-excursion-link__content-main">
+        <%
+        for(let item of page_meta.excursion_top) {
+        -%>
+        <a href="<%= item.href %>" class="l-excursion-link__main-link">
+          <h4 class="c-head__en--main l-excursion-link__main-title"><%= item.label_en %></h4>
+          <p class="c-text__regular--md l-excursion-link__main-title--sub"><%= item.label_ja %></p>
+        </a>
+        <% } -%>
+      </div>
+      <div class="l-excursion-link__content-sub">
+        <ul class="l-excursion-link__list">
+          <%
+          for(let item of page_meta.excursion_link) {
+          -%>
+          <% if(item.href === page_meta.page_url) { -%>
+          <li class="l-excursion-link__item">
+            <a href="<%= item.href %>" class="l-excursion-link__link is-current"><%= item.label %></a>
+          </li>
+          <% } else { -%>
+          <li class="l-excursion-link__item">
+            <a href="<%= item.href %>" class="l-excursion-link__link"><%= item.label %></a>
+          </li>
+          <% } -%>
+          <% } -%>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

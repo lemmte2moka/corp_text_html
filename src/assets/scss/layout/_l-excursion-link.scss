@@ -1,0 +1,118 @@
+@use '../global';
+
+.l-excursion-link {
+  border-top: 1px solid global.$border-color;
+
+  & .l-excursion-link__content {
+    display: flex;
+    gap: 0 6%;
+    padding-top: 70px;
+    padding-bottom: 80px;
+
+    @include global.sp() {
+      flex-direction: column;
+      gap: 40px 0;
+      padding-top: 60px;
+      padding-bottom: 70px;
+    }
+
+    & .l-excursion-link__content-main {
+      flex-shrink: 0;
+
+      & .l-excursion-link__main-link {
+        @include global.transition(opacity);
+
+        @include global.sp() {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
+        &:hover {
+          opacity: 0.7;
+
+          .l-excursion-link__main-title--sub {
+            transform: translateX(5px);
+          }
+        }
+
+        & .l-excursion-link__main-title {
+
+          &--sub {
+            @include global.transition(transform);
+            margin-top: 0;
+            &::after {
+              content: '';
+              display: inline-block;
+              background: url(/assets/img/common/icon_arrow_right_blue.png) no-repeat;
+              background-size: cover;
+              width: 15px;
+              height: 12.5px;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    & .l-excursion-link__content-sub {
+      border-left: 1px solid global.$border-color;
+      width: 100%;
+      padding-top: 10px;
+      padding-left: 6%;
+
+      @include global.sp() {
+        border-left: 0;
+        border-top: 1px solid global.$border-color;
+        padding-top: 35px;
+        padding-left: 0;
+      }
+
+      & .l-excursion-link__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px 20px;
+
+        @include global.sp() {
+          flex-direction: column;
+          gap: 25px 0;
+        }
+
+        & .l-excursion-link__item {
+          width: calc(100% / 3 - 15px);
+        }
+
+        & .l-excursion-link__link {
+          display: inline-block;
+          font-size: 1.6rem;
+          font-weight: global.$font-medium;
+          line-height: global.$line-row;
+          @include global.transition();
+
+          &.is-current {
+            pointer-events: none;
+            color: global.$site-color;
+
+            &::after {
+              display: none;
+            }
+          }
+
+          &:hover {
+            opacity: 0.7;
+            transform: translateX(5px);
+          }
+
+          &::after {
+            content: '';
+            display: inline-block;
+            background: url(/assets/img/common/icon_arrow_right_blue.png) no-repeat;
+            background-size: cover;
+            width: 15px;
+            height: 12.5px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}

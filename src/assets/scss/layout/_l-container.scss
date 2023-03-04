@@ -8,7 +8,7 @@
   margin-left: auto;
   margin-right: auto;
 
-  *:first-child {
+  > *:first-child:not([class*="l-breadcrumb"]) {
     margin-top: 0;
   }
 

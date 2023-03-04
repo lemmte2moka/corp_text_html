@@ -113,6 +113,120 @@
     ,"page_title": "TOP"
     ,"page_class": "p-top"
   }
+  ,"about": {
+    "title": "私たちについて | 株式会社NATURAL WATER"
+    ,"page_url": "/about/"
+    ,"page_title": "私たちについて"
+    ,"page_class": "p-about"
+    ,"fv_image_title": "ABOUT"
+    ,"fv_image_sub_title": "わたしたちについて"
+    ,"fv_image_pc": "/assets/img/about/img_about_mv.jpg"
+    ,"fv_image_sp": "/assets/img/about/img_about_mv_sp.jpg"
+    ,"media_link": [
+      {
+        "label": "TOP"
+        ,"href": "/about/message/"
+        ,"image": "/assets/img/about/img_about_link_01.jpg"
+      }
+      ,{
+        "label": "会社概要"
+        ,"href": "/about/profile/"
+        ,"image": "/assets/img/about/img_about_link_02.jpg"
+      }
+    ]
+    ,"breadcrumb": [
+      {
+        "label": "TOP"
+        ,"href": "/"
+      }
+      ,{
+        "label": "私たちについて"
+        ,"href": ""
+      }
+    ]
+  }
+  ,"about-message": {
+    "title": "ごあいさつ | 私たちについて | 株式会社NATURAL WATER"
+    ,"page_url": "/about/message/"
+    ,"page_title": "ごあいさつ"
+    ,"page_class": "p-about-message"
+    ,"excursion_top": [
+      {
+        "label_ja": "わたしたちについて"
+        ,"label_en": "ABOUT"
+        ,"href": "/about/"
+      }
+    ]
+    ,"excursion_link": [
+      {
+        "label": "ごあいさつ"
+        ,"href": "/about/message/"
+      }
+      ,{
+        "label": "企業理念"
+        ,"href": "/about/philosophy/"
+      }
+      ,{
+        "label": "会社概要"
+        ,"href": "/about/profile/"
+      }
+    ]
+    ,"breadcrumb": [
+      {
+        "label": "TOP"
+        ,"href": "/"
+      }
+      ,{
+        "label": "私たちについて"
+        ,"href": "/about/"
+      }
+      ,{
+        "label": "ごあいさつ"
+        ,"href": ""
+      }
+    ]
+  }
+  ,"about-philosophy": {
+    "title": "会社理念 | 私たちについて | 株式会社NATURAL WATER"
+    ,"page_url": "/about/philosophy/"
+    ,"page_title": "会社理念"
+    ,"page_class": "p-about-philosophy"
+    ,"excursion_top": [
+      {
+        "label_ja": "わたしたちについて"
+        ,"label_en": "ABOUT"
+        ,"href": "/about/"
+      }
+    ]
+    ,"excursion_link": [
+      {
+        "label": "ごあいさつ"
+        ,"href": "/about/message/"
+      }
+      ,{
+        "label": "企業理念"
+        ,"href": "/about/philosophy/"
+      }
+      ,{
+        "label": "会社概要"
+        ,"href": "/about/profile/"
+      }
+    ]
+    ,"breadcrumb": [
+      {
+        "label": "TOP"
+        ,"href": "/"
+      }
+      ,{
+        "label": "私たちについて"
+        ,"href": "/about/"
+      }
+      ,{
+        "label": "会社理念"
+        ,"href": ""
+      }
+    ]
+  }
   ,"service": {
     "title": "ページTOP | サービス"
     ,"page_url": "/service/"

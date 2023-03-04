@@ -1,0 +1,22 @@
+<%
+// ページ共通のデータ
+const data = conf.common;
+
+const page_meta = conf[slug]
+
+-%>
+
+<div class="c-media-link">
+  <ul class="c-media-link__list">
+    <%
+    for(let item of page_meta.media_link) {
+    -%>
+    <li class="c-media-link__item">
+      <a href="<%= item.href %>" class="c-media-link__link">
+        <p class="c-media-link__media"><img src="<%= item.image %>" alt="<%= item.label %>" loading="lazy" class="c-media-link__media-img"></p>
+        <p class="c-media-link__title"><%= item.label %></p>
+      </a>
+    </li>
+    <% } -%>
+  </ul>
+</div>

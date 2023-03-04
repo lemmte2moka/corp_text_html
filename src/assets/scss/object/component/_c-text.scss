@@ -15,6 +15,44 @@
     font-size: 1.6rem;
     color: global.$text-color;
     line-height: global.$line-medium;
+
+    @include global.sp() {
+      font-size: 1.5rem;
+    }
+  }
+
+  &--lg {
+    @extend %c-text;
+    font-size: 2rem;
+    color: global.$text-color;
+    line-height: global.$line-medium;
+
+    @include global.sp() {
+      font-size: 1.6rem;
+    }
+  }
+
+
+  &--md-white {
+    @extend %c-text;
+    font-size: 1.6rem;
+    color: global.$base-color;
+    line-height: global.$line-medium;
+  }
+}
+
+.c-text__regular {
+
+  &--md {
+    @extend %c-text;
+    font-size: 1.6rem;
+    font-weight: global.$font-regular;
+    color: global.$text-color;
+    line-height: global.$line-medium;
+
+    @include global.sp() {
+      font-size: 1.5rem;
+    }
   }
 
 

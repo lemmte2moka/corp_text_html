@@ -9,3 +9,9 @@
     }
   }
 }
+
+[class^="l-col"] {
+  > *:first-child {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,79 @@
+@use '../../global';
+
+.c-media-link {
+  margin-top: 60px;
+
+  @include global.sp() {
+    margin-top: 40px;
+  }
+
+  & .c-media-link__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 6%;
+
+    @include global.sp() {
+      flex-direction: column;
+      gap: 40px 0;
+    }
+
+    & .c-media-link__item {
+      width: calc(100% / 2 - 3%);
+
+      @include global.sp() {
+        width: 100%;
+      }
+
+      & .c-media-link__link {
+        width: 100%;
+        @include global.transition(opacity);
+
+        &:hover {
+          opacity: 0.7;
+          .c-media-link__media-img {
+            transform: scale(1.1);
+          }
+        }
+
+        & .c-media-link__media {
+          border-radius: 40px;
+          width: 100%;
+          overflow: hidden;
+
+          @include global.sp() {
+            border-radius: 20px;
+          }
+
+          & .c-media-link__media-img {
+            @include global.transition(transform);
+          }
+        }
+
+        & .c-media-link__title {
+          font-size: 2rem;
+          position: relative;
+          padding-right: 50px;
+          margin-top: 20px;
+
+          @include global.sp() {
+            font-size: 1.6rem;
+            padding-right: 40px;
+            margin-top: 15px;
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            background: url(/assets/img/common/icon_arrow_right_blue.png) no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 4px;
+            right: 0;
+            width: 20px;
+            height: 17px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -137,36 +137,39 @@ setBreadcrumb:function(){
 /*※2の関数------------------------------------------*/
 /*--------------------ページ内遷移-------------------*/
 anchorSmoothScroll:function(){
-  let $ancScroll = $('.js-anc');
-  $ancScroll.on('click', function(){
-    // ヘッダー分調整
-    var adjustPc = -130;
-    var adjustSp = -70;
-
-    var speed = 600;
-    var href= $(this).attr("href");
-    var target = $(href == "#" || href == "" ? 'html' : href);
-    var positionPc = target.offset().top + adjustPc;
-    var positionSp = target.offset().top + adjustSp;
-    var breakpoint = 767;
-    var lastWW = $(window).width();
-    // リサイズ調整
-    if (lastWW <= breakpoint) {
-      $('body,html').animate({scrollTop:positionSp}, speed, 'swing');
-    } else {
-      $('body,html').animate({scrollTop:positionPc}, speed, 'swing');
-    }
-    $('window').on('resize', function() {
-        var currentWW = $('window').width();
-        if (lastWW <= breakpoint && breakpoint < currentWW) {
-          $('body,html').animate({scrollTop:positionPc}, speed, 'swing');
-        } else if (currentWW <= breakpoint && breakpoint < lastWW) {
-          $('body,html').animate({scrollTop:positionSp}, speed, 'swing');
-        }
-        lastWW = currentWW;
-    });
-    return false;
-  })
+  let ancScroll = document.querySelectorAll('.js-anc')
+  for(let i = 0; i < ancScroll.length; i++) {
+    ancScroll[i].addEventListener('click', e => {
+      e.preventDefault();
+      // ヘッダー分調整
+      var adjustPc = -130
+      var adjustSp = -70
+  
+      var speed = 600
+      var href= e.target.getAttribute('href')
+      var target = document.getElementById(href.replace('#', ''));
+      var positionPc = target.offset().top + adjustPc;
+      var positionSp = target.offset().top + adjustSp;
+      var breakpoint = 767;
+      var lastWW = $(window).width();
+      // リサイズ調整
+      if (lastWW <= breakpoint) {
+        $('body,html').animate({scrollTop:positionSp}, speed, 'swing');
+      } else {
+        $('body,html').animate({scrollTop:positionPc}, speed, 'swing');
+      }
+      $('window').on('resize', function() {
+          var currentWW = $('window').width();
+          if (lastWW <= breakpoint && breakpoint < currentWW) {
+            $('body,html').animate({scrollTop:positionPc}, speed, 'swing');
+          } else if (currentWW <= breakpoint && breakpoint < lastWW) {
+            $('body,html').animate({scrollTop:positionSp}, speed, 'swing');
+          }
+          lastWW = currentWW;
+      });
+      return false;
+    })
+  }
 },
 /*※2の関数------------------------------------------*/
 /*--------------------トップに戻るボタン-------------------*/

@@ -6,9 +6,9 @@ $prop: (
 );
 $modifier: (
   'row': 1.4,
-  'medium': 1.6,
-  'high': 1.8,
-  'high-lg': 2
+  'medium': 1.8,
+  'high': 2,
+  'high-lg': 2.2
 );
 
 @include mixin.utility($prop, $modifier);
