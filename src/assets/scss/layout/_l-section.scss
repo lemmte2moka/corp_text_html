@@ -29,7 +29,7 @@
   padding-top: 0;
 }
 
-[class^="l-section"]:last-child {
+[class^="l-section"]:last-of-type {
   padding-bottom: 200px;
 
   @include global.sp() {

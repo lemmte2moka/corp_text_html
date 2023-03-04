@@ -79,6 +79,10 @@
 
         & .l-excursion-link__item {
           width: calc(100% / 3 - 15px);
+
+          @include global.sp() {
+            width: 100%;
+          }
         }
 
         & .l-excursion-link__link {

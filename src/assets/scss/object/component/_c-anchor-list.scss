@@ -1,0 +1,39 @@
+@use '../../global';
+
+.c-anchor-list {
+  margin-top: 70px;
+
+  & .c-anchor-list__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 40px;
+  }
+
+  & .c-anchor-list__link {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: global.$font-medium;
+    line-height: global.$line-row;
+    @include global.transition(color);
+
+    &:hover {
+      color: global.$site-color;
+      &::before {
+        transform: translateY(5px);
+      }
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      background: url(/assets/img/common/icon_arrow_bottom_blue.png) no-repeat;
+      background-size: cover;
+      position: relative;
+      top: 4px;
+      width: 17px;
+      height: 22px;
+      margin-right: 8px;
+      @include global.transition(transform);
+    }
+  }
+}
