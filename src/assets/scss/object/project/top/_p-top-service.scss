@@ -32,6 +32,7 @@
     margin-top: 80px;
 
     @include global.sp() {
+      flex-direction: column-reverse;
       margin-top: 60px;
     }
 

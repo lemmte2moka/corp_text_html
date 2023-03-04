@@ -1,0 +1,131 @@
+@use '../../global';
+
+.c-table {
+  width: 100%;
+  margin-top: 40px;
+
+  @include global.sp() {
+    margin-top: 30px;
+  }
+
+  & .c-table__thead {
+    border-top: 1px solid global.$border-color;
+    border-bottom: 1px solid global.$border-color;
+    background-color: global.$bg-color;
+    width: 100%;
+    padding-bottom: 15px;
+  }
+
+  & .c-table__header {
+    vertical-align: middle;
+    font-size: 1.5rem;
+    color: global.$bold-color;
+    line-height: global.$line-high;
+    font-weight: global.$font-medium;
+    padding: 10px 20px;
+
+    @include global.sp() {
+      font-size: 1.3rem;
+      line-height: global.$line-medium;
+      padding: 10px 10px;
+    }
+
+    &.is-title {
+      padding-right: 60px;
+
+      @include global.sp() {
+        padding-right: 25px;
+      }
+    }
+  }
+
+  & .c-table__tbody {
+    tr {
+      border-bottom: 1px solid global.$border-gray;
+
+      &:first-child {
+        border-top: 1px solid global.$border-gray;
+      }
+    }
+
+
+    &.is-not-thead {
+      tr:first-child {
+        border-top: 1px solid global.$border-gray;
+      }
+    }
+  }
+
+  & .c-table__tbody-head {
+    font-size: 1.6rem;
+    background-color: global.$bg-color;
+    color: global.$bold-color;
+    font-weight: global.$font-medium;
+    line-height: global.$line-medium;
+    word-break: break-all;
+    padding: 30px 20px 30px 30px;
+
+    @include global.sp() {
+      font-size: 1.4rem;
+      padding: 30px 10px;
+    }
+  }
+
+  & .c-table__tbody-body {
+    font-size: 1.6rem;
+    color: global.$text-color;
+    font-weight: global.$font-regular;
+    line-height: global.$line-medium;
+    padding: 30px 20px 30px 30px;
+
+    @include global.sp() {
+      padding: 30px 10px;
+      font-size: 1.4rem;
+    }
+
+    & + .c-table__body {
+      border-left: 1px solid global.$border-color;
+    }
+  }
+
+  &__text {
+    margin-top: 30px;
+
+    @include global.sp() {
+      margin-top: 20px;
+    }
+
+    & + .c-table__text,
+    & + .c-table__text--accent {
+      margin-top: 10px;
+    }
+
+    &--accent {
+      color: global.$accent-color;
+      @include global.sp() {
+        margin-top: 20px;
+      }
+  
+      & + .c-table__text,
+      & + .c-table__text--accent {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__text-accent {
+    font-size: 1.8rem;
+    color: global.$accent-color;
+    font-weight: global.$font-medium;
+
+    @include global.sp() {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.c-table__body {
+  > [class]:first-child {
+    margin-top: 0;
+  }
+}

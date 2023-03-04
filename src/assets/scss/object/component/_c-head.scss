@@ -48,6 +48,31 @@
 
   }
 
+  &--h4 {
+    @extend %c-head__normal;
+    font-size: 2rem;
+    color: global.$bold-color;
+    font-weight: global.$font-medium;
+    padding-left: 10px;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      background-color: global.$accent-color;
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @include global.sp() {
+      font-size: 1.8rem;
+    }
+
+  }
+
   &--h3-white {
     @extend %c-head__normal;
     font-size: 3.2rem;
@@ -108,5 +133,13 @@
 
   @include global.sp() {
     margin-top: 30px;
+  }
+}
+
+[class*="c-head__normal--h4"] + [class] {
+  margin-top: 30px;
+
+  @include global.sp() {
+    margin-top: 25px;
   }
 }

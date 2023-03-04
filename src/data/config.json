@@ -124,7 +124,7 @@
     ,"fv_image_sp": "/assets/img/about/img_about_mv_sp.jpg"
     ,"media_link": [
       {
-        "label": "TOP"
+        "label": "ごあいさつ"
         ,"href": "/about/message/"
         ,"image": "/assets/img/about/img_about_link_01.jpg"
       }
@@ -223,6 +223,47 @@
       }
       ,{
         "label": "会社理念"
+        ,"href": ""
+      }
+    ]
+  }
+  ,"about-profile": {
+    "title": "会社概要 | 私たちについて | 株式会社NATURAL WATER"
+    ,"page_url": "/about/profile/"
+    ,"page_title": "会社概要"
+    ,"page_class": "p-about-profile"
+    ,"excursion_top": [
+      {
+        "label_ja": "わたしたちについて"
+        ,"label_en": "ABOUT"
+        ,"href": "/about/"
+      }
+    ]
+    ,"excursion_link": [
+      {
+        "label": "ごあいさつ"
+        ,"href": "/about/message/"
+      }
+      ,{
+        "label": "企業理念"
+        ,"href": "/about/philosophy/"
+      }
+      ,{
+        "label": "会社概要"
+        ,"href": "/about/profile/"
+      }
+    ]
+    ,"breadcrumb": [
+      {
+        "label": "TOP"
+        ,"href": "/"
+      }
+      ,{
+        "label": "私たちについて"
+        ,"href": "/about/"
+      }
+      ,{
+        "label": "会社概要"
         ,"href": ""
       }
     ]

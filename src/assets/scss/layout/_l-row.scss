@@ -3,11 +3,12 @@
 .l-row {
   display: flex;
   gap: 50px 6%;
+  flex-wrap: wrap;
   margin-top: 50px;
 
   @include global.sp() {
     gap: 40px 0;
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin-top: 40px;
   }
 
