@@ -23,6 +23,14 @@
       padding-bottom: 90px;
     }
   }
+
+  &--bg {
+    background-color: global.$site-light-color;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 120px;
+    margin-bottom: 80px;
+  }
 }
 
 [class^="l-section"] + [class^="l-section"] {

@@ -82,7 +82,7 @@ const paths = {
   },
 
   js: {
-    src: root.srcAsset + 'js/*.js',
+    src: root.srcAsset + 'js/**/*.js',
     dest: root.distAsset + 'js'
   },
 

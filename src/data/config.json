@@ -376,6 +376,22 @@
       }
     ]
   }
+  ,"news": {
+    "title": "お知らせ | 株式会社NATURAL WATER"
+    ,"page_url": "/news/"
+    ,"page_title": "お知らせ"
+    ,"page_class": "p-news"
+    ,"breadcrumb": [
+      {
+        "label": "TOP"
+        ,"href": "/"
+      }
+      ,{
+        "label": "お知らせ"
+        ,"href": ""
+      }
+    ]
+  }
   ,"service": {
     "title": "ページTOP | サービス"
     ,"page_url": "/service/"

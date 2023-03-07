@@ -1,0 +1,217 @@
+<%
+//ページ個別の情報を読み込む
+const slug = 'news'
+const meta = conf[slug]
+%>
+<%-
+  include('../../components/common/_header.ejs', {
+    slug: slug,
+  })
+-%>
+
+<div class="l-content-top--lower">
+  <div class="l-container">
+    <%-
+    include('../../components/main/_third-lower-fv.ejs', {
+      slug: slug,
+    })
+    -%>
+  </div>
+</div>
+
+<div class="l-section--bg">
+  <div class="l-container">
+    <div class="c-select">
+      <label class="c-select__label">期間を絞り込み</label>
+      <div class="c-select__wrapper js-select">
+        <select name="year" class="c-select__choose js-select-list">
+          <option value="all">すべての年</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="l-section--lv3">
+  <div class="l-container">
+    <div class="c-number-display">
+      <p class="c-number-display__num-items">
+        <span class="c-number-display__text">全</span>
+        <span class="c-number-display__all-num js-all-num">0</span>
+        <span class="c-number-display__text">件中</span>
+      </p>
+      <p class="c-number-display__num-items">
+        <span class="c-number-display__text--num js-num-first">1</span>
+        <span class="c-number-display__text--num">~</span>
+        <span class="c-number-display__text--num js-num-end">10</span>
+        <span class="c-number-display__text">件を表示</span>
+      </p>
+    </div>
+    <div class="p-news__content js-news">
+      <ul class="p-news__list js-news-list">
+        <li class="p-news__item">
+          <a href="#" class="p-news__link">
+            <p class="p-news__media">
+              <img src="/assets/img/news/img_news_item.jpg" alt="当社における新型コロナウイルスの感染者の発生と対応について" class="p-news__media-img">
+            </p>
+            <div class="p-news__detail">
+              <div class="p-news__date-tag">
+                <p class="p-news__date">2022.06.06</p>
+                <p class="p-news__tag">会社情報</p>
+              </div>
+              <p class="p-news__title">当社における新型コロナウイルスの感染者の発生と対応について</p>
+            </div>
+          </a>
+        </li>
+        <li class="p-news__item">
+          <a href="#" class="p-news__link">
+            <p class="p-news__media">
+              <img src="/assets/img/news/img_news_item.jpg" alt="「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ" class="p-news__media-img">
+            </p>
+            <div class="p-news__detail">
+              <div class="p-news__date-tag">
+                <p class="p-news__date">2022.06.06</p>
+                <p class="p-news__tag">重要なお知らせ</p>
+              </div>
+              <p class="p-news__title">「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ</p>
+            </div>
+          </a>
+        </li>
+        <li class="p-news__item">
+          <a href="#" class="p-news__link">
+            <p class="p-news__media">
+              <img src="/assets/img/news/img_news_item.jpg" alt="「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ" class="p-news__media-img">
+            </p>
+            <div class="p-news__detail">
+              <div class="p-news__date-tag">
+                <p class="p-news__date">2022.06.06</p>
+                <p class="p-news__tag">重要なお知らせ</p>
+              </div>
+              <p class="p-news__title">「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ</p>
+            </div>
+          </a>
+        </li>
+        <li class="p-news__item">
+          <a href="#" class="p-news__link">
+            <p class="p-news__media">
+              <img src="/assets/img/news/img_news_item.jpg" alt="「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ" class="p-news__media-img">
+            </p>
+            <div class="p-news__detail">
+              <div class="p-news__date-tag">
+                <p class="p-news__date">2022.06.06</p>
+                <p class="p-news__tag">重要なお知らせ</p>
+              </div>
+              <p class="p-news__title">「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ</p>
+            </div>
+          </a>
+        </li>
+        <li class="p-news__item">
+          <a href="#" class="p-news__link">
+            <p class="p-news__media">
+              <img src="/assets/img/news/img_news_item.jpg" alt="「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ" class="p-news__media-img">
+            </p>
+            <div class="p-news__detail">
+              <div class="p-news__date-tag">
+                <p class="p-news__date">2022.06.06</p>
+                <p class="p-news__tag">重要なお知らせ</p>
+              </div>
+              <p class="p-news__title">「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ</p>
+            </div>
+          </a>
+        </li>
+        <li class="p-news__item">
+          <a href="#" class="p-news__link">
+            <p class="p-news__media">
+              <img src="/assets/img/news/img_news_item.jpg" alt="「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ" class="p-news__media-img">
+            </p>
+            <div class="p-news__detail">
+              <div class="p-news__date-tag">
+                <p class="p-news__date">2022.06.06</p>
+                <p class="p-news__tag">重要なお知らせ</p>
+              </div>
+              <p class="p-news__title">「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ</p>
+            </div>
+          </a>
+        </li>
+        <li class="p-news__item">
+          <a href="#" class="p-news__link">
+            <p class="p-news__media">
+              <img src="/assets/img/news/img_news_item.jpg" alt="「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ" class="p-news__media-img">
+            </p>
+            <div class="p-news__detail">
+              <div class="p-news__date-tag">
+                <p class="p-news__date">2022.06.06</p>
+                <p class="p-news__tag">重要なお知らせ</p>
+              </div>
+              <p class="p-news__title">「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ</p>
+            </div>
+          </a>
+        </li>
+        <li class="p-news__item">
+          <a href="#" class="p-news__link">
+            <p class="p-news__media">
+              <img src="/assets/img/news/img_news_item.jpg" alt="「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ" class="p-news__media-img">
+            </p>
+            <div class="p-news__detail">
+              <div class="p-news__date-tag">
+                <p class="p-news__date">2022.06.06</p>
+                <p class="p-news__tag">重要なお知らせ</p>
+              </div>
+              <p class="p-news__title">「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ</p>
+            </div>
+          </a>
+        </li>
+        <li class="p-news__item">
+          <a href="#" class="p-news__link">
+            <p class="p-news__media">
+              <img src="/assets/img/news/img_news_item.jpg" alt="「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ" class="p-news__media-img">
+            </p>
+            <div class="p-news__detail">
+              <div class="p-news__date-tag">
+                <p class="p-news__date">2022.06.06</p>
+                <p class="p-news__tag">重要なお知らせ</p>
+              </div>
+              <p class="p-news__title">「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ</p>
+            </div>
+          </a>
+        </li>
+        <li class="p-news__item">
+          <a href="#" class="p-news__link">
+            <p class="p-news__media">
+              <img src="/assets/img/news/img_news_item.jpg" alt="「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ" class="p-news__media-img">
+            </p>
+            <div class="p-news__detail">
+              <div class="p-news__date-tag">
+                <p class="p-news__date">2022.06.06</p>
+                <p class="p-news__tag">重要なお知らせ</p>
+              </div>
+              <p class="p-news__title">「ビューティーンメイクアップカラーテラコッタオレンジ」の一部商品自主回収のお詫びとお知らせ</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="c-pager js-pagenation">
+        <div class="c-pager__prev js-pagenation-prev"><a href="#"></a></div>
+        <ul class="c-pager__list js-pagenation-list">
+          <li class="c-pager__item"><a href="#" class="is-active c-pager__num js-pagenation-paged">1</a></li>
+          <li class="c-pager__item"><a href="#" class="c-pager__num js-pagenation-paged">2</a></li>
+          <li class="c-pager__item"><a href="#" class="c-pager__num js-pagenation-paged">3</a></li>
+          <!-- <li class="c-pager__item"><a href="#" class="c-pager__num js-pagenation-paged">4</a></li>
+          <li class="c-pager__item"><a href="#" class="c-pager__num js-pagenation-paged">5</a></li> -->
+          <li class="c-pager__item"><a href="#" class="c-pager__dot dot">...</a></li>
+          <li class="c-pager__item"><a href="#" class="c-pager__num js-pagenation-paged">10</a></li>
+        </ul>
+        <div class="c-pager__next js-pagenation-next"><a href="#"></a></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<%-
+  include('../../components/common/_footer.ejs', {
+    slug: slug,
+  })
+-%>

@@ -1,0 +1,177 @@
+@use '../../global';
+
+.c-pager {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include global.sp() {
+    margin-top: 50px;
+  }
+
+  & .c-pager__prev {
+    font-family: global.$font-roboto;
+    font-size: 1.2rem;
+    position: relative;
+    flex-shrink: 0;
+
+    & a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+
+      @include global.sp() {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @include global.sp() {
+      font-size: 1rem;
+    }
+
+    &.is-disabled {
+      pointer-events: none;
+      color: global.$border-gray;
+    }
+
+    &.is-none {
+      pointer-events: none;
+      display: none;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 50px;
+      background: url(/assets/img/common/icon_prev.png) no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+
+      @include global.sp() {
+        top: 3px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    >a {
+      padding-left: 30px;
+
+      @include global.sp() {
+        padding-left: 25px;
+      }
+    }
+  }
+
+  & .c-pager__next {
+    margin-left: 50px;
+    font-family: global.$font-roboto;
+    font-size: 1.2rem;
+    position: relative;
+    flex-shrink: 0;
+
+    & a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding-right: 30px;
+
+      @include global.sp() {
+        width: 30px;
+        height: 30px;
+        padding-right: 25px;
+      }
+    }
+
+    @include global.sp() {
+      font-size: 1rem;
+      margin-left: 10px;
+    }
+
+    &.is-disabled {
+      pointer-events: none;
+      color: global.$border-gray;
+    }
+
+    &.is-none {
+      pointer-events: none;
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 50px;
+      background: url(/assets/img/common/icon_next.png) no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      right: 0;
+      pointer-events: none;
+
+      @include global.sp() {
+        width: 30px;
+        height: 30px;
+        top: 3px;
+      }
+    }
+
+  }
+
+  & .c-pager__list {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    flex-shrink: 0;
+    margin-right: -10px;
+
+    @include global.sp() {
+      padding-top: 2px;
+      margin-left: 5px;
+      margin-right: -5px;
+    }
+  }
+
+  & .c-pager__item {
+    font-family: global.$font-roboto;
+    font-size: 1.4rem;
+    margin: 0 10px;
+
+    @include global.sp() {
+      font-size: 1.3rem;
+      margin: 0 5px;
+    }
+
+  }
+
+  & .c-pager__num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+
+    @include global.sp() {
+      width: 30px;
+      height: 30px;
+    }
+
+    &.is-active {
+      border-radius: 50%;
+      background-color: global.$site-color;
+      color: global.$base-color;
+      pointer-events: none;
+    }
+  }
+
+  & .c-pager__dot {
+    pointer-events: none;
+  }
+}

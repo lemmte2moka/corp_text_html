@@ -15,5 +15,14 @@ const page_meta = conf[slug]
   <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
   <script src="/assets/js/vendor/swiper.min.js"></script>
   <script src="/assets/js/all.js"></script>
+  <%
+  if(slug === "news") {
+  -%>
+  <script src="/assets/js/vendor/gsap.min.js"></script>
+  <script src="/assets/js/pages/news/index.js"></script>
+  <script src="/assets/js/pages/news/pagenation.js"></script>
+  <%
+  }
+  -%>
 </body>
 </html>
