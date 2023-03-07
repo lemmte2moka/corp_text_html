@@ -1,9 +1,13 @@
 @use '../global';
 
-.l-row {
+%l-row {
   display: flex;
-  gap: 50px 6%;
   flex-wrap: wrap;
+}
+
+.l-row {
+  @extend %l-row;
+  gap: 50px 6%;
   margin-top: 50px;
 
   @include global.sp() {
@@ -13,7 +17,7 @@
   }
 
   &--reverse {
-    display: flex;
+    @extend %l-row;
     flex-direction: row-reverse;
     gap: 50px 6%;
     margin-top: 50px;
@@ -21,6 +25,17 @@
     @include global.sp() {
       gap: 40px 0;
       flex-direction: column-reverse;
+      margin-top: 40px;
+    }
+  }
+
+  &--3-2 {
+    @extend %l-row;
+    gap: 50px 3.5%;
+    margin-top: 50px;
+
+    @include global.sp() {
+      gap: 40px 20px;
       margin-top: 40px;
     }
   }

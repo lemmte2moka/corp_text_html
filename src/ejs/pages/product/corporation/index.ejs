@@ -1,0 +1,128 @@
+<%
+//ページ個別の情報を読み込む
+const slug = 'product-corporation'
+const meta = conf[slug]
+const product = [
+  {
+    media: '/assets/img/product/img_product_01.png',
+    name: '商品名',
+    tag: [
+      {
+        kind: '商品種別'
+      }
+      ,{
+        kind: '商品種別'
+      }
+    ]
+  }
+  ,{
+    media: '/assets/img/product/img_product_01.png',
+    name: '商品名',
+    tag: [
+      {
+        kind: '商品種別'
+      }
+      ,{
+        kind: '商品種別'
+      }
+    ]
+  }
+  ,{
+    media: '/assets/img/product/img_product_01.png',
+    name: '商品名',
+    tag: [
+      {
+        kind: '商品種別'
+      }
+      ,{
+        kind: '商品種別'
+      }
+    ]
+  }
+  ,{
+    media: '/assets/img/product/img_product_01.png',
+    name: '商品名',
+    tag: [
+      {
+        kind: '商品種別'
+      }
+      ,{
+        kind: '商品種別'
+      }
+    ]
+  }
+  ,{
+    media: '/assets/img/product/img_product_01.png',
+    name: '商品名',
+    tag: [
+      {
+        kind: '商品種別'
+      }
+      ,{
+        kind: '商品種別'
+      }
+    ]
+  }
+  ,{
+    media: '/assets/img/product/img_product_01.png',
+    name: '商品名',
+    tag: [
+      {
+        kind: '商品種別'
+      }
+      ,{
+        kind: '商品種別'
+      }
+    ]
+  }
+]
+%>
+<%-
+  include('../../../components/common/_header.ejs', {
+    slug: slug,
+  })
+-%>
+
+<div class="l-content-top--lower">
+  <div class="l-container">
+    <%-
+    include('../../../components/main/_third-lower-fv.ejs', {
+      slug: slug,
+    })
+    -%>
+  </div>
+</div>
+
+<div class="l-section--lv2">
+  <div class="l-container">
+    <ul class="l-row--3-2 p-product__list">
+      <%
+      for(let item of product) {
+      -%>
+      <li class="l-col--3-2">
+        <p class="c-media"><img src="<%= item.media %>" alt="item.name"></p>
+        <p class="c-head__normal--h3"><%= item.name %></p>
+        <ul class="p-product__tag-list">
+          <%
+          for(let tags of item.tag) {
+          -%>
+          <li class="p-product__tag-item"><%= tags.kind %></li>
+          <% } -%>
+        </ul>
+      </li>
+      <% } -%>
+    </ul>
+  </div>
+</div>
+
+<%-
+include('../../../components/main/_excursion-link.ejs', {
+  slug: slug,
+})
+-%>
+
+<%-
+  include('../../../components/common/_footer.ejs', {
+    slug: slug,
+  })
+-%>

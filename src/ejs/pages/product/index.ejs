@@ -1,0 +1,35 @@
+<%
+//ページ個別の情報を読み込む
+const slug = 'product'
+const meta = conf[slug]
+%>
+<%-
+  include('../../components/common/_header.ejs', {
+    slug: slug,
+  })
+-%>
+
+<div class="l-content-top">
+  <%-
+  include('../../components/main/_second-lower-fv.ejs', {
+    slug: slug,
+  })
+  -%>
+  
+</div>
+
+<section class="l-section--lv2">
+  <div class="l-container">
+    <%-
+    include('../../components/main/_media_link.ejs', {
+      slug: slug,
+    })
+    -%>
+  </div>
+</section>
+
+<%-
+  include('../../components/common/_footer.ejs', {
+    slug: slug,
+  })
+-%>

@@ -268,6 +268,114 @@
       }
     ]
   }
+  ,"product": {
+    "title": "商品 | 株式会社NATURAL WATER"
+    ,"page_url": "/product/"
+    ,"page_title": "商品"
+    ,"page_class": "p-product"
+    ,"fv_image_title": "PRODUCT"
+    ,"fv_image_sub_title": "わたしたちについて"
+    ,"fv_image_pc": "/assets/img/product/img_products_mv.jpg"
+    ,"fv_image_sp": "/assets/img/product/img_products_mv_sp.jpg"
+    ,"media_link": [
+      {
+        "label": "一般商品"
+        ,"href": "/product/consumer/"
+        ,"image": "/assets/img/product/img_product_link_01.jpg"
+        ,"text": "店舗で購入できる表品を中心に紹介いたします。"
+      }
+      ,{
+        "label": "法人商品"
+        ,"href": "/product/corporation/"
+        ,"image": "/assets/img/product/img_product_link_02.jpg"
+        ,"text": "法人様向けの商品をご紹介いたします。"
+      }
+    ]
+    ,"breadcrumb": [
+      {
+        "label": "TOP"
+        ,"href": "/"
+      }
+      ,{
+        "label": "商品"
+        ,"href": ""
+      }
+    ]
+  }
+  ,"product-consumer": {
+    "title": "一般商品 | 商品 | 株式会社NATURAL WATER"
+    ,"page_url": "/product/consumer/"
+    ,"page_title": "一般商品"
+    ,"page_class": "p-product-consumer"
+    ,"excursion_top": [
+      {
+        "label_ja": "商品"
+        ,"label_en": "PRODUCT"
+        ,"href": "/product/"
+      }
+    ]
+    ,"excursion_link": [
+      {
+        "label": "一般商品"
+        ,"href": "/product/consumer/"
+      }
+      ,{
+        "label": "法人商品"
+        ,"href": "/product/corporation/"
+      }
+    ]
+    ,"breadcrumb": [
+      {
+        "label": "TOP"
+        ,"href": "/"
+      }
+      ,{
+        "label": "商品"
+        ,"href": "/product/"
+      }
+      ,{
+        "label": "一般商品"
+        ,"href": ""
+      }
+    ]
+  }
+  ,"product-corporation": {
+    "title": "法人商品 | 商品 | 株式会社NATURAL WATER"
+    ,"page_url": "/product/corporation/"
+    ,"page_title": "法人商品"
+    ,"page_class": "p-product-corporation"
+    ,"excursion_top": [
+      {
+        "label_ja": "商品"
+        ,"label_en": "PRODUCT"
+        ,"href": "/product/"
+      }
+    ]
+    ,"excursion_link": [
+      {
+        "label": "一般商品"
+        ,"href": "/product/consumer/"
+      }
+      ,{
+        "label": "法人商品"
+        ,"href": "/product/corporation/"
+      }
+    ]
+    ,"breadcrumb": [
+      {
+        "label": "TOP"
+        ,"href": "/"
+      }
+      ,{
+        "label": "商品"
+        ,"href": "/product/"
+      }
+      ,{
+        "label": "法人商品"
+        ,"href": ""
+      }
+    ]
+  }
   ,"service": {
     "title": "ページTOP | サービス"
     ,"page_url": "/service/"

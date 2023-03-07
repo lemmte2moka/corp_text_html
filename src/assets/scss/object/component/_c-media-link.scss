@@ -73,6 +73,18 @@
             height: 17px;
           }
         }
+
+        & .c-media-link__caption {
+          font-size: 1.6rem;
+          line-height: global.$line-medium;
+          font-weight: global.$font-regular;
+          margin-top: 30px;
+
+          @include global.sp() {
+            font-size: 1.5rem;
+            margin-top: 20px;
+          }
+        }
       }
     }
   }

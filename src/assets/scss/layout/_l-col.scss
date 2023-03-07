@@ -8,6 +8,14 @@
       width: 100%;
     }
   }
+
+  &--3-2 {
+    width: 31%;
+
+    @include global.sp() {
+      width: calc(100% / 2 - 10px);
+    }
+  }
 }
 
 [class^="l-col"] {
