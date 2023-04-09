@@ -1,0 +1,79 @@
+@use '../../../global';
+
+.p-recruit {
+  .l-fv__media-img {
+    object-position: left;
+  }
+}
+
+.p-recruit__section {
+  background-color: global.$site-light-color;
+  margin-top: -90px;
+  margin-bottom: 90px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow-x: hidden;
+
+  @include global.sp() {
+    margin-top: -20px;
+    margin-bottom: 70px;
+  }
+
+  & .p-recruit__slider {
+    overflow: visible;
+    padding-bottom: 100px;
+
+    @include global.sp() {
+      padding-bottom: 60px;
+    }
+
+    & .p-recruit__list {
+
+      & .p-recruit__item {
+        width: 320px;
+
+        @include global.sp() {
+          width: 240px;
+        }
+
+        & .p-recruit__link {
+
+          & .p-recruit__box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 320px;
+            height: 320px;
+            padding: 20px 30px;
+            background-color: global.$base-color;
+            border-radius: 40px;
+
+            @include global.sp() {
+              width: 240px;
+              height: 240px;
+            }
+
+            & .p-recruit__media {
+              text-align: center;
+              width: 220px;
+
+              @include global.sp() {
+                width: 160px;
+              }
+            }
+
+            & .p-recruit__name {
+              font-size: 2rem;
+              margin-top: 15px;
+
+              @include global.sp() {
+                font-size: 1.6rem;
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  } 
+}

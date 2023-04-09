@@ -138,7 +138,7 @@ export function ejsCompile() {
   .pipe(gulp.dest(paths.ejs.dest))
 }
 
-// scss トランスパイル開発用
+// scss コンパイルパイル開発用
 export function cssDev() {
   const plugins = [
     autoprefixer()

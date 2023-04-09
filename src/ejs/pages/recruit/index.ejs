@@ -1,0 +1,114 @@
+<%
+//ページ個別の情報を読み込む
+const slug = 'recruit'
+const meta = conf[slug]
+const employee = [
+  {
+    media: '/assets/img/recruit/img_employee_01.jpg',
+    href: '/recruit/01/',
+    name: '社員名'
+  },
+  {
+    media: '/assets/img/recruit/img_employee_02.jpg',
+    href: '/recruit/02/',
+    name: '社員名'
+  },
+  {
+    media: '/assets/img/recruit/img_employee_03.jpg',
+    href: '/recruit/03/',
+    name: '社員名'
+  },
+  {
+    media: '/assets/img/recruit/img_employee_04.jpg',
+    href: '/recruit/04/',
+    name: '社員名'
+  },
+  {
+    media: '/assets/img/recruit/img_employee_05.jpg',
+    href: '/recruit/05/',
+    name: '社員名'
+  },
+  {
+    media: '/assets/img/recruit/img_employee_06.jpg',
+    href: '/recruit/05/',
+    name: '社員名'
+  }
+]
+%>
+<%-
+  include('../../components/common/_header.ejs', {
+    slug: slug,
+  })
+-%>
+
+
+<div class="l-content-top">
+  <%-
+  include('../../components/main/_second-lower-fv.ejs', {
+    slug: slug,
+  })
+  -%>
+  
+</div>
+
+<section class="l-section--lv2">
+  <div class="l-container">
+    <%-
+    include('../../components/main/_media_link.ejs', {
+      slug: slug,
+    })
+    -%>
+  </div>
+</section>
+
+<section class="p-recruit__section">
+  <div class="l-container">
+    <h2 class="c-head__ja--h2">社員紹介</h2>
+    <div class="p-recruit__slider swiper-container js-recruit-swiper">
+      <div class="p-recruit__list swiper-wrapper">
+        <%
+        for(let item of employee) {
+        -%>
+        <div class="p-recruit__item swiper-slide">
+          <a href="<%= item.href %>" class="p-recruit__link">
+            <div class="p-recruit__box">
+              <p class="p-recruit__media"><img src="<%= item.media %>" alt="<%= item.name %>" width="320" height="320" loading="lazy" class="p-recruit__img"></p>
+              <p class="p-recruit__name"><%= item.name %></p>
+            </div>
+          </a>
+        </div>
+        <% } -%>
+      </div>
+      <div class="swiper-button-prev c-swiper__button--prev js-recruit-prev"></div>
+      <div class="swiper-button-next c-swiper__button--next js-recruit-next"></div>
+    </div>
+  </div>
+</section>
+
+<section class="l-section--lv4">
+  <div class="l-container">
+    <h2 class="c-head__ja--h2">オフィス</h2>
+    <div class="l-row">
+      <div class="l-col--2">
+        <p class="c-media--radius"><img src="/assets/img/recruit/img_recruit_office.jpg" alt="" width="320" height="320" loading="lazy" class="c-media__img"></p>
+      </div>
+      <div class="l-col--2">
+        <h3 class="c-head__normal--h3">オフィス</h3>
+        <p class="c-text__normal--md">オフィス内をご紹介します。</p>
+        <div class="c-button-link">
+          <p class="c-button-link__wrapper u-justify-content-sp--flex-start">
+            <a href="/recruit/" class="c-button-link__anchor">
+              <span class="c-button-link__label">詳細はこちら</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%-
+  include('../../components/common/_footer.ejs', {
+    slug: slug,
+  })
+-%>

@@ -392,6 +392,40 @@
       }
     ]
   }
+  ,"recruit": {
+    "title": "採用情報 | 株式会社NATURAL WATER"
+    ,"page_url": "/recruit/"
+    ,"page_title": "採用情報"
+    ,"page_class": "p-recruit"
+    ,"fv_image_title": "RECRUIT"
+    ,"fv_image_sub_title": "採用情報"
+    ,"fv_image_pc": "/assets/img/recruit/img_recruit_mv.jpg"
+    ,"fv_image_sp": "/assets/img/recruit/img_recruit_mv_sp.jpg"
+    ,"media_link": [
+      {
+        "label": "新卒採用"
+        ,"href": "/recruit/new-graduate/"
+        ,"image": "/assets/img/recruit/img_recruit_link_01.jpg"
+        ,"text": "新卒の採用情報や弊社についてご紹介しております。"
+      }
+      ,{
+        "label": "中途採用"
+        ,"href": "/recruit/mid-career-recruitment/"
+        ,"image": "/assets/img/recruit/img_recruit_link_02.jpg"
+        ,"text": "求人情報をご紹介しております。"
+      }
+    ]
+    ,"breadcrumb": [
+      {
+        "label": "TOP"
+        ,"href": "/"
+      }
+      ,{
+        "label": "採用情報"
+        ,"href": ""
+      }
+    ]
+  }
   ,"service": {
     "title": "ページTOP | サービス"
     ,"page_url": "/service/"

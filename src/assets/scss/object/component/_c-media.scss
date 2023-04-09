@@ -5,6 +5,11 @@
   margin-top: 60px;
   max-width: 100%;
 
+  &--radius {
+    overflow: hidden;
+    border-radius: 4em;
+  }
+
   @include global.sp() {
     margin-top: 40px;
   }

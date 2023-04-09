@@ -10,7 +10,7 @@
   & .c-media-link__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0 6%;
+    gap: 50px 6%;
 
     @include global.sp() {
       flex-direction: column;

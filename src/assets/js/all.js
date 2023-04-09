@@ -414,6 +414,24 @@ swiperSetting:function(){
       }
     }
   });
+
+  const swiperEmployee = new Swiper(".js-recruit-swiper", {
+    loop: true,
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    speed: 1000,
+    navigation: {
+      nextEl: ".js-recruit-next",
+      prevEl: ".js-recruit-prev"
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: "auto",
+        spaceBetween: 60,
+        centeredSlides: false,
+      }
+    }
+  });
 },
 /*・・・・・・・・・・・・・全イベント実行・・・・・・・・・・ */ 
 allEvent:function(){
