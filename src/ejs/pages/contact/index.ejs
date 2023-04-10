@@ -1,0 +1,94 @@
+<%
+//ページ個別の情報を読み込む
+const slug = 'contact'
+const meta = conf[slug]
+%>
+<%-
+  include('../../components/common/_header.ejs', {
+    slug: slug,
+  })
+-%>
+
+<div class="l-content-top--lower">
+  <div class="l-container">
+    <%-
+    include('../../components/main/_third-lower-fv.ejs', {
+      slug: slug,
+    })
+    -%>
+  </div>
+</div>
+
+<section class="l-section--lv2">
+  <div class="l-container">
+    <h2 class="c-head__ja--h2">お電話でのお問合せ</h2>
+    <div class="p-contact__tel">
+      <div class="p-contact__col">
+        <p class="p-contact__text c-text__normal--md">カスタマーサービス</p>
+        <p class="p-contact__num"><a href="tel:0120-000-000" class="p-contact__num-link">0120-000-000</a></p>
+      </div>
+      <div class="p-contact__col">
+        <p class="p-contact__text--flame">受付時間</p>
+        <p class="p-contact__text c-text__normal--md">午前9時〜午後5時</p>
+        <div class="c-notes-list">
+          <ul class="c-notes-list__list">
+            <li class="c-notes-list__item">
+              <span class="c-notes-list__icon">※</span>
+              <span class="c-notes-list__text">土・日・祝日および弊社休業日を除きます。</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="l-section--lv2">
+  <div class="l-container">
+    <h2 class="c-head__ja--h2">お問合せフォーム</h2>
+    <form action="" method="post" class="p-contact__form">
+      <div class="p-contact__form-list">
+        <div class="p-contact__form-item">
+          <label class="p-contact__form-label">
+            <span class="p-contact__form-kind">お名前(漢字)</span>
+            <input type="text" name="name" class="p-contact__form-input">
+          </label>
+        </div>
+        <div class="p-contact__form-item">
+          <label class="p-contact__form-label">
+            <span class="p-contact__form-kind">お名前(カナ)</span>
+            <input type="text" name="name-kana" class="p-contact__form-input">
+          </label>
+        </div>
+        <div class="p-contact__form-item">
+          <label class="p-contact__form-label">
+            <span class="p-contact__form-kind">E-mailアドレス</span>
+            <input type="email" name="e-mail" class="p-contact__form-input">
+          </label>
+        </div>
+        <div class="p-contact__form-item">
+          <label class="p-contact__form-label">
+            <span class="p-contact__form-kind">電話番号</span>
+            <input type="tel" name="tel" class="p-contact__form-input">
+          </label>
+        </div>
+        <div class="p-contact__form-item">
+          <label class="p-contact__form-label">
+            <span class="p-contact__form-kind">お問合せ内容</span>
+            <textarea name="content" cols="30" rows="10"  class="p-contact__form-textarea"></textarea>
+          </label>
+        </div>
+      </div>
+      <div class="p-contact__button">
+        <button type="button" class="p-contact__button-label">確認画面</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<%-
+  include('../../components/common/_footer.ejs', {
+    slug: slug,
+  })
+-%>

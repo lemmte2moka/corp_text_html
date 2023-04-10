@@ -81,6 +81,7 @@ spBugerToggle:function(){
   closeButton.addEventListener('click', (e) => {
     if(toggleContent.classList.contains('is-open')) {
       toggleContent.classList.remove('is-open')
+      toggleButton.classList.remove('is-open')
     }
   })
 },

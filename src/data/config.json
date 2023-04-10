@@ -426,6 +426,22 @@
       }
     ]
   }
+  ,"contact": {
+    "title": "お問合せ | 株式会社NATURAL WATER"
+    ,"page_url": "/contact/"
+    ,"page_title": "お問合せ"
+    ,"page_class": "p-contact"
+    ,"breadcrumb": [
+      {
+        "label": "TOP"
+        ,"href": "/"
+      }
+      ,{
+        "label": "お問合せ"
+        ,"href": ""
+      }
+    ]
+  }
   ,"service": {
     "title": "ページTOP | サービス"
     ,"page_url": "/service/"

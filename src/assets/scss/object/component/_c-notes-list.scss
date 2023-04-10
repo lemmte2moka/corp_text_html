@@ -1,0 +1,19 @@
+@use '../../global';
+
+.c-notes-list {
+  margin-top: 10px;
+
+  & .c-notes-list__list {
+
+
+    & .c-notes-list__item {
+      font-size: 1.4rem;
+      color: global.$text-gray;
+      line-height: 1.2;
+
+      @include global.sp() {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
