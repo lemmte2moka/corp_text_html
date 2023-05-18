@@ -5,7 +5,6 @@ const data = conf.common;
 const page_meta = conf[slug]
 
 -%>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -14,10 +13,13 @@ const page_meta = conf[slug]
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= page_meta.title %></title>
   <meta name="description" content="<%= data.description %>">
-  <link rel="icon" href="/assets/img/favicon.ico" sizes="32×32">
-  <link rel="apple-touch-icon" href="/assets/img/favicon.ico">
-  <link rel="stylesheet" href="/assets/css/swiper.min.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/natural-water/assets/img/favicon.ico" sizes="32×32">
+  <link rel="apple-touch-icon" href="/natural-water/assets/img/favicon.ico">
+  <link rel="stylesheet" href="/natural-water/assets/css/swiper.min.css">
+  <link rel="stylesheet" href="/natural-water/assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  
 </head>
 <body class="<%= page_meta.page_class %>">
 

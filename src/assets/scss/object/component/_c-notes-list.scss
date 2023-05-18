@@ -10,6 +10,11 @@
       font-size: 1.4rem;
       color: global.$text-gray;
       line-height: 1.2;
+      
+      p:not([class]) {
+        display: flex;
+        gap: 8px 4px;
+      }
 
       @include global.sp() {
         font-size: 1.3rem;

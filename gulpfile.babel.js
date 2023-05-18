@@ -48,8 +48,8 @@ import fs from 'fs';
 var root = {
   src: 'src/',
   srcAsset: 'src/assets/',
-  dist: 'dist/',
-  distAsset: 'dist/assets/'
+  dist: 'dist/natural-water/',
+  distAsset: 'dist/natural-water/assets/'
 }
 
 const paths = {
@@ -256,7 +256,7 @@ export function server(done) {
       // ]
     },
     notify: false,
-    startPaths: 'index.html'
+    startPaths: '/natural-water/index.html'
   })
   done();
 }

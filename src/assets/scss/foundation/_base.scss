@@ -50,3 +50,24 @@ img {
     display: block !important;
   }
 }
+
+.has-global-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  max-width: inherit !important;
+}
+
+.wp-site-blocks {
+  padding-top: 0;
+}
+
+.wp-block-group {
+  margin-top: 0 !important;
+}
+
+.entry-content {
+  margin-top: 0 !important;
+}

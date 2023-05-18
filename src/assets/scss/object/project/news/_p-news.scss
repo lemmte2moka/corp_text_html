@@ -51,11 +51,16 @@
         }
 
         & .p-news__media {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           border: 1px solid global.$border-color;
           border-radius: 30px;
           overflow: hidden;
           flex-shrink: 0;
-          max-width: 330px;
+          max-width: 320px;
+          max-height: 200px;
+          aspect-ratio: 3/2;
           width: 100%;
           height: fit-content;
 
@@ -67,6 +72,9 @@
 
           & .p-news__media-img {
             text-align: center;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
             @include global.transition();
           }
         }

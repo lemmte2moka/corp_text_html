@@ -345,53 +345,20 @@ swiperSetting:function(){
   const swiperTop = new Swiper(".js-top-swiper", {
     loop: true,
     slidesPerView: "auto",
-    // centeredSlides: true,
     effect: "fade",
-    // autoplay: {
-    //   delay: 5000,
-    // },
+    autoplay: {
+      delay: 5000,
+    },
     speed: 1000,
-    // pagination: {
-    //   el: ".js-pick-pagenation",
-    //   clickable: true,
-    //   type: 'progressbar',
-    // },
-    // navigation: {
-    //   nextEl: ".js-pick-next",
-    //   prevEl: ".js-pick-prev"
-    // },
     breakpoints: {
       768: {
         slidesPerView: "auto",
-        // initialSlide: 1,
         centeredSlides: false,
       }
     }
   });
 
-  const swiperNews = new Swiper(".js-news-swiper", {
-    loop: false,
-    slidesPerView: "auto",
-    // centeredSlides: true,
-    spaceBetween: 30,
-    speed: 1000,
-    pagination: {
-      el: ".js-news-pagination",
-      clickable: true,
-      type: 'progressbar',
-    },
-    navigation: {
-      nextEl: ".js-news-next",
-      prevEl: ".js-news-prev"
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: "auto",
-        spaceBetween: 50,
-        centeredSlides: false,
-      }
-    }
-  });
+
 
   const swiperProduct = new Swiper(".js-product-swiper", {
     loop: false,

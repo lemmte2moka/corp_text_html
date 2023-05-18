@@ -28,7 +28,7 @@
   &--prev {
     left: 0;
     &::after {
-      background: url(/assets/img/common/icon_prev.png) no-repeat;
+      background: url(/natural-water/assets/img/common/icon_prev.png) no-repeat;
 
       @include global.sp() {
         background-size: cover;
@@ -44,7 +44,7 @@
       left: 53px;
     }
     &::after {
-      background: url(/assets/img/common/icon_next.png) no-repeat;
+      background: url(/natural-water/assets/img/common/icon_next.png) no-repeat;
       @include global.sp() {
         background-size: cover;
       }

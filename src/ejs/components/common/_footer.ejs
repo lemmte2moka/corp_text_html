@@ -12,15 +12,15 @@ const page_meta = conf[slug]
     slug: slug,
   })
   -%>
-  <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
-  <script src="/assets/js/vendor/swiper.min.js"></script>
-  <script src="/assets/js/all.js"></script>
+  <script src="/natural-water/assets/js/vendor/jquery-3.6.0.min.js"></script>
+  <script src="/natural-water/assets/js/vendor/swiper.min.js"></script>
+  <script src="/natural-water/assets/js/all.js"></script>
   <%
-  if(slug === "news") {
+  if(slug === "news" || slug === "top") {
   -%>
-  <script src="/assets/js/vendor/gsap.min.js"></script>
-  <script src="/assets/js/pages/news/index.js"></script>
-  <script src="/assets/js/pages/news/pagenation.js"></script>
+  <!-- <script src="/natural-water/assets/js/vendor/gsap.min.js"></script> -->
+  <script src="/natural-water/assets/js/pages/news/index.js"></script>
+  <script src="/natural-water/assets/js/pages/news/pagenation.js"></script>
   <%
   }
   -%>

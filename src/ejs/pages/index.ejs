@@ -4,54 +4,54 @@ const slug = 'top'
 const meta = conf[slug]
 const top = [
   {
-    pc_media: '/assets/img/top/img_mv_01.jpg',
-    sp_media: '/assets/img/top/img_mv_sp_01.jpg',
+    pc_media: '/natural-water/assets/img/top/img_mv_01.jpg',
+    sp_media: '/natural-water/assets/img/top/img_mv_sp_01.jpg',
     label: 'fv1'
   },
   {
-    pc_media: '/assets/img/top/img_mv_02.jpg',
-    sp_media: '/assets/img/top/img_mv_sp_02.jpg',
+    pc_media: '/natural-water/assets/img/top/img_mv_02.jpg',
+    sp_media: '/natural-water/assets/img/top/img_mv_sp_02.jpg',
     label: 'fv2'
   },
   {
-    pc_media: '/assets/img/top/img_mv_03.jpg',
-    sp_media: '/assets/img/top/img_mv_sp_03.jpg',
+    pc_media: '/natural-water/assets/img/top/img_mv_03.jpg',
+    sp_media: '/natural-water/assets/img/top/img_mv_sp_03.jpg',
     label: 'fv3'
   }
 ]
 
 const news = [
   {
-    media: '/assets/img/top/img_news_item.jpg',
-    href: '/news/01/',
+    media: '/natural-water/assets/img/top/img_news_item.jpg',
+    href: '/natural-water/news/01/',
     date: '2023.01.20',
     tag: '会社情報',
     title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
   },
   {
-    media: '/assets/img/top/img_news_item.jpg',
-    href: '/news/02/',
+    media: '/natural-water/assets/img/top/img_news_item.jpg',
+    href: '/natural-water/news/02/',
     date: '2023.01.20',
     tag: '新着お知らせ',
     title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
   },
   {
-    media: '/assets/img/top/img_news_item.jpg',
-    href: '/news/03/',
+    media: '/natural-water/assets/img/top/img_news_item.jpg',
+    href: '/natural-water/news/03/',
     date: '2023.01.20',
     tag: '会社情報',
     title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
   },
   {
-    media: '/assets/img/top/img_news_item.jpg',
-    href: '/news/04/',
+    media: '/natural-water/assets/img/top/img_news_item.jpg',
+    href: '/natural-water/news/04/',
     date: '2023.01.20',
     tag: '会社情報',
     title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
   },
   {
-    media: '/assets/img/top/img_news_item.jpg',
-    href: '/news/05/',
+    media: '/natural-water/assets/img/top/img_news_item.jpg',
+    href: '/natural-water/news/05/',
     date: '2023.01.20',
     tag: '会社情報',
     title: 'ニュースタイトルが入ります。ニュースタイトルが入ります。ニュースタイトルが入ります。'
@@ -60,28 +60,28 @@ const news = [
 
 const product = [
   {
-    media: '/assets/img/top/img_product_01.png',
-    href: '/product/01/',
+    media: '/natural-water/assets/img/top/img_product_01.png',
+    href: '/natural-water/product/01/',
     title: '商品1'
   },
   {
-    media: '/assets/img/top/img_product_01.png',
-    href: '/product/02/',
+    media: '/natural-water/assets/img/top/img_product_01.png',
+    href: '/natural-water/product/02/',
     title: '商品2'
   },
   {
-    media: '/assets/img/top/img_product_01.png',
-    href: '/product/03/',
+    media: '/natural-water/assets/img/top/img_product_01.png',
+    href: '/natural-water/product/03/',
     title: '商品3'
   },
   {
-    media: '/assets/img/top/img_product_01.png',
-    href: '/product/04/',
+    media: '/natural-water/assets/img/top/img_product_01.png',
+    href: '/natural-water/product/04/',
     title: '商品4'
   },
   {
-    media: '/assets/img/top/img_product_01.png',
-    href: '/product/05/',
+    media: '/natural-water/assets/img/top/img_product_01.png',
+    href: '/natural-water/product/05/',
     title: '商品5'
   }
 ]
@@ -116,44 +116,45 @@ const product = [
 
   <section class="l-section--lv2 u-overflow--hidden">
     <div class="l-container">
-      <div class="c-sction-title">
+      <div class="c-sction-title js-effect-fade c-effect-fade">
         <div class="c-sction-title__head">
           <p class="c-head__normal--sub">ニュース</p>
           <h2 class="c-head__en--main">News</h2>
         </div>
         <div class="c-button-link is-pc">
           <p class="c-button-link__wrapper">
-            <a href="/news/" class="c-button-link__anchor">
+            <a href="/natural-water/news/" class="c-button-link__anchor">
               <span class="c-button-link__label">News一覧</span>
             </a>
           </p>
         </div>
       </div>
-
-      <div class="p-top-news__slider swiper-container js-news-swiper">
-        <div class="p-top-news__list swiper-wrapper">
-          <%
-          for(let item of news) {
-          -%>
-          <div class="p-top-news__item swiper-slide">
-            <a href="<%= item.href %>" class="p-top-news__link">
-              <p class="p-top-news__media"><img src="<%= item.media %>" alt="<%= item.title %>" width="380" height="240" loading="lazy" class="p-top-news__img"></p>
-              <div class="p-top-news__date-tag">
-                <p class="p-top-news__date"><%= item.date %></p>
-                <p class="p-top-news__tag"><%= item.tag %></p>
-              </div>
-              <p class="p-top-news__title"><%= item.title %></p>
-            </a>
+      <div class="p-top-news js-top-news">
+        <!-- <div class="p-top-news__slider swiper-container js-news-swiper js-effect-fade c-effect-fade">
+          <div class="p-top-news__list swiper-wrapper js-news-list">
+            <%
+            for(let item of news) {
+            -%>
+            <div class="p-top-news__item swiper-slide">
+              <a href="/natural-water<%= item.href %>" class="p-top-news__link">
+                <p class="p-top-news__media"><img src="<%= item.media %>" alt="<%= item.title %>" width="380" height="240" loading="lazy" class="p-top-news__img"></p>
+                <div class="p-top-news__date-tag">
+                  <p class="p-top-news__date"><%= item.date %></p>
+                  <p class="p-top-news__tag"><%= item.tag %></p>
+                </div>
+                <p class="p-top-news__title"><%= item.title %></p>
+              </a>
+            </div>
+            <% } -%>
           </div>
-          <% } -%>
-        </div>
-        <div class="swiper-button-prev c-swiper__button--prev js-news-prev"></div>
-        <div class="swiper-button-next c-swiper__button--next js-news-next"></div>
-        <div class="swiper-pagination c-swiper__pagination js-news-pagination"></div>
+          <div class="swiper-button-prev c-swiper__button--prev js-news-prev"></div>
+          <div class="swiper-button-next c-swiper__button--next js-news-next"></div>
+          <div class="swiper-pagination c-swiper__pagination js-news-pagination"></div>
+        </div> -->
       </div>
       <div class="c-button-link is-sp">
         <p class="c-button-link__wrapper">
-          <a href="/news/" class="c-button-link__anchor">
+          <a href="/natural-water/news/" class="c-button-link__anchor">
             <span class="c-button-link__label">News一覧</span>
           </a>
         </p>
@@ -161,8 +162,8 @@ const product = [
     </div>
   </section>
 
-  <section class="l-section--lv2 p-top-philosophy u-overflow--hidden">
-    <video src="/assets/video/video_philosophy.mp4" autoplay loop  class="p-top__philosophy-video"></video>
+  <section class="l-section--lv2 p-top-philosophy u-overflow--hidden js-effect-fade c-effect-fade">
+    <video src="/natural-water/assets/video/video_philosophy.mp4" autoplay loop  class="p-top__philosophy-video"></video>
     <p class="p-top-philosophy__title">PHILOSOPHY</p>
     <div class="l-container p-top-philosophy__content">
       <div class="c-sction-title">
@@ -179,7 +180,7 @@ const product = [
       </p>
       <div class="c-button-link">
         <p class="c-button-link__wrapper u-justify-content-sp--flex-start">
-          <a href="/about/" class="c-button-link__anchor--white">
+          <a href="/natural-water/about/" class="c-button-link__anchor--white">
             <span class="c-button-link__label--white">私たちについて</span>
           </a>
         </p>
@@ -189,21 +190,21 @@ const product = [
 
   <section class="l-section--lv2 u-overflow--hidden">
     <div class="l-container">
-      <div class="c-sction-title">
+      <div class="c-sction-title js-effect-fade c-effect-fade">
         <div class="c-sction-title__head">
           <p class="c-head__normal--sub">商品情報</p>
           <h2 class="c-head__en--main">Products</h2>
         </div>
         <div class="c-button-link is-pc">
           <p class="c-button-link__wrapper">
-            <a href="/product/" class="c-button-link__anchor">
+            <a href="/natural-water/product/" class="c-button-link__anchor">
               <span class="c-button-link__label">商品情報</span>
             </a>
           </p>
         </div>
       </div>
 
-      <div class="c-tab">
+      <div class="c-tab js-effect-fade c-effect-fade">
         <ul class="c-tab__list js-tab-list js-effect-fade c-effect-fade">
           <li class="c-tab__item"><button type="button" class="c-tab__button js-tab-button" data-target="#tab-content-1">一般向け商品</button></li>
           <li class="c-tab__item"><button type="button" class="c-tab__button js-tab-button" data-target="#tab-content-2">法人向け商人</button></li>
@@ -215,7 +216,7 @@ const product = [
               for(let item of product) {
               -%>
               <div class="p-top-product__item swiper-slide">
-                <a href="<%= item.href %>" class="p-top-product__link">
+                <a href="/natural-water<%= item.href %>" class="p-top-product__link">
                   <p class="p-top-product__media"><img src="<%= item.media %>" alt="<%= item.title %>" width="294" height="294" loading="lazy" class="p-top-product__img"></p>
                 </a>
               </div>
@@ -230,9 +231,9 @@ const product = [
           <p class="c-text__normal--md">購入できる場所から探す</p>
         </div>
       </div>
-      <div class="c-button-link is-sp">
+      <div class="c-button-link is-sp js-effect-fade c-effect-fade">
         <p class="c-button-link__wrapper">
-          <a href="/product/" class="c-button-link__anchor">
+          <a href="/natural-water/product/" class="c-button-link__anchor">
             <span class="c-button-link__label">商品情報</span>
           </a>
         </p>
@@ -243,7 +244,7 @@ const product = [
 
   <section class="l-section--lv2 p-top-service">
     <div class="l-container">
-      <div class="c-sction-title">
+      <div class="c-sction-title js-effect-fade c-effect-fade">
         <div class="c-sction-title__head">
           <p class="c-head__normal--sub">事業内容</p>
           <h2 class="c-head__en--main">Service</h2>
@@ -251,7 +252,7 @@ const product = [
         </div>
       </div>
 
-      <div class="l-row">
+      <div class="l-row js-effect-fade c-effect-fade">
         <div class="l-col--2">
           <h4 class="p-top-service__title">水質調査</h4>
           <p class="c-text__normal--md u-line-height--high-lg">
@@ -262,11 +263,11 @@ const product = [
           </p>
         </div>
         <div class="l-col--2">
-          <p class="p-top-service__media"><img src="/assets/img/top/img_service_02.png" alt="水質調査" width="580" height="560" loading="lazy" class="p-top-service__img"></p>
+          <p class="p-top-service__media"><img src="/natural-water/assets/img/top/img_service_02.png" alt="水質調査" width="580" height="560" loading="lazy" class="p-top-service__img"></p>
         </div>
       </div>
 
-      <div class="l-row--reverse">
+      <div class="l-row--reverse js-effect-fade c-effect-fade">
         <div class="l-col--2">
           <h4 class="p-top-service__title">商品開発</h4>
           <p class="c-text__normal--md u-line-height--high-lg">
@@ -276,16 +277,16 @@ const product = [
           </p>
         </div>
         <div class="l-col--2">
-          <p class="p-top-service__media"><img src="/assets/img/top/img_service_01.png" alt="水質調査" width="580" height="560" loading="lazy" class="p-top-service__img"></p>
+          <p class="p-top-service__media"><img src="/natural-water/assets/img/top/img_service_01.png" alt="水質調査" width="580" height="560" loading="lazy" class="p-top-service__img"></p>
         </div>
       </div>
     </div>
   </section>
 
   <div class="l-section--lv2">
-    <div class="p-top-other-links">
+    <div class="p-top-other-links js-effect-fade c-effect-fade">
       <div class="p-top-other-links__recruitment">
-        <a href="/recruit/" class="p-top-other-links__anchor">
+        <a href="/natural-water/recruit/" class="p-top-other-links__anchor">
 
         </a>
         <div class="p-top-other-links__content">
@@ -294,7 +295,7 @@ const product = [
         </div>
       </div>
       <div class="p-top-other-links__faq">
-        <a href="/faq" class="p-top-other-links__anchor">
+        <a href="/natural-water/faq/" class="p-top-other-links__anchor">
 
         </a>
         <div class="p-top-other-links__content">

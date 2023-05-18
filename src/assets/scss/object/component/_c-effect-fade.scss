@@ -1,0 +1,45 @@
+@use '../../global';
+
+.c-effect-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1.5s;
+}
+
+.c-fade-target {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1.5s;
+  &:nth-of-type(2) {
+    transition-delay: 0.4s;
+  }
+  &:nth-of-type(3) {
+    transition-delay: 0.8s;
+  }
+  &:nth-of-type(4) {
+    transition-delay: 1.2s;
+  }
+  &:nth-of-type(5) {
+    transition-delay: 1.6s;
+  }
+  &:nth-of-type(6) {
+    transition-delay: 2s;
+  }
+  &:nth-of-type(7) {
+    transition-delay: 2.4s;
+  }
+  &:nth-of-type(8) {
+    transition-delay: 2.8s;
+  }
+  &:nth-of-type(9) {
+    transition-delay: 3.2s;
+  }
+  &:nth-of-type(10) {
+    transition-delay: 3.6s;
+  }
+}
+
+.c-effect-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}

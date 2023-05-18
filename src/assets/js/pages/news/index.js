@@ -6,11 +6,6 @@ news = {
   jsonPath: {}, // 取得用
   jsonData: {}, // 格納用
   jsonCurrentData: {}, // 絞り込み後のデータ格納用
-  categorys: {
-    'important': '重要なお知らせ',
-    'corporate': '企業情報',
-    'products': '商品情報',
-  },
   state: {
     pageType: 'news',
     number: {}, // 表示件数
@@ -22,6 +17,7 @@ news = {
     yearList: {} // 絞り込み用
   },
   elem: {
+    container: {}, // Newsエリア
     wrap: {}, // Newsエリア
     list: {}, // Newsリスト（出力するエリア）
     selectWrap: {}, // Selectエリア
@@ -42,18 +38,26 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     news.state.pageType = 'other'
   }
-
-  news.elem.wrap = document.querySelector('.js-news')
-  news.elem.list = document.querySelector('.js-news').querySelector('.js-news-list')
-  news.elem.selectWrap = document.querySelector('.js-select')
-  news.elem.selectList = document.querySelector('.js-select').querySelector('.js-select-list')
-  news.jsonPath = '/assets/json/list.json'
-  news.state.number = 10
+  console.log(news.state.pageType)
+  if(news.state.pageType === 'news') {
+    news.elem.wrap = document.querySelector('.js-news')
+    news.elem.list = document.querySelector('.js-news').querySelector('.js-news-list')
+    news.elem.selectWrap = document.querySelector('.js-select')
+    news.elem.selectList = document.querySelector('.js-select').querySelector('.js-select-list')
+    news.state.number = 10
+    news.state.year = 'all'
+  } else if(news.state.pageType === 'top') {
+    news.elem.container = document.querySelector('.js-top-news')
+    news.state.number = 5
+  }
+  news.jsonPath = '/natural-water/19-2/'
+  // news.jsonPath = '/natural-water/19-2/index.json'
   news.state.paged = 1
   news.state.offset = 0
-  news.state.year = 'all'
   news.init()
-  news.yearSelect()
+  if(news.state.pageType === 'news') {
+    news.yearSelect()
+  }
 })
 
 
@@ -73,21 +77,26 @@ news.init = function(_yearList) {
     // 通信完了及び通信成功した場合　
     if(xhr.readyState == 4 && xhr.status == 200) {
       news.jsonData = []
-      news.jsonData = JSON.parse(xhr.responseText).data
+      news.jsonData = JSON.parse(xhr.responseText)
+      console.log(news.jsonData)
       news.jsonCurrentData = news.jsonData
+      console.log(news.jsonCurrentData)
       news.state.maxPaged = Math.ceil(news.jsonCurrentData.length / news.state.number)
       var _year = []
       for(let i = 0; i <  news.jsonCurrentData.length; i++) {
-        _year.push(news.jsonData[i].create_date.slice(0,4));
+        _year.push(news.jsonData[i].date.slice(0,4));
       }
       var _yearList = _year.filter(function (x, i, self) {
         return self.indexOf(x) === i;
       });
       news.state.yearList = _yearList
-      
       news.generate()
-      news.selectGenerate()
-      news.allNumSet()
+      if(news.state.pageType === 'news') {
+        news.selectGenerate()
+        news.allNumSet()
+      } else if (news.state.pageType === 'top') {
+        news.swiperSetting()
+      }
       if(!document.querySelector('.js-pagenation')) return
       pagenation.init()
       // データがなかった場合
@@ -110,9 +119,19 @@ news.init = function(_yearList) {
   reset
 */
 news.reset = function () {
-  const _h = news.elem.list.clientHeight
+  let _h = ''
+  if(news.state.pageType === 'top') {
+    _h = news.elem.container.clientHeight
+  } else {
+    _h = news.elem.list.clientHeight
+  }
   if(_h <= 0) return
-  news.elem.list.style.height = _h + 'px'
+  if(news.state.pageType === 'top') {
+    news.elem.container.style.height = _h + 'px'
+  } else {
+    news.elem.list.style.height = _h + 'px'
+  }
+  
 }
 
 /*
@@ -120,26 +139,64 @@ news.reset = function () {
 */
 news.generate = function () {
   news.reset()
-  gsap.to(news.elem.list, {
-    opacity: 0,
-    duration: 0.1,
-    onComplete: () => { 
-      news.elem.list.innerHTML = ''
-      for (let i = news.state.offset; i < news.jsonCurrentData.length; i++) {
-        if(i >= (news.state.number * news.state.paged) || !news.jsonCurrentData[i]) break
-        if(news.state.pageType === 'news') {
-          news.elem.list.appendChild(news.listHtml(news.jsonCurrentData[i],'news'))
-        } else {
-          news.elem.list.appendChild(news.listHtml(news.jsonCurrentData[i],'other'))
+  if(news.state.pageType === 'top') {
+    const _wrapperDiv = document.createElement("div")
+    _wrapperDiv.classList.add('p-top-news__slider')
+    _wrapperDiv.classList.add('swiper-container')
+    _wrapperDiv.classList.add('js-news-swiper')
+    _wrapperDiv.classList.add('js-effect-fade')
+    _wrapperDiv.classList.add('c-effect-fade')
+  
+    const _listDiv = document.createElement("div")
+    _listDiv.classList.add('p-top-news__list')
+    _listDiv.classList.add('swiper-wrapper')
+    _listDiv.classList.add('js-news-list')
+  
+    const _prev = document.createElement("div")
+    _prev.classList.add('swiper-button-prev')
+    _prev.classList.add('c-swiper__button--prev')
+    _prev.classList.add('js-news-prev')
+  
+    const _next = document.createElement("div")
+    _next.classList.add('swiper-button-next')
+    _next.classList.add('c-swiper__button--next')
+    _next.classList.add('js-news-next')
+
+    const _pagenation = document.createElement("div")
+    _pagenation.classList.add('swiper-pagination')
+    _pagenation.classList.add('c-swiper__pagination')
+    _pagenation.classList.add('js-news-pagination')
+    
+    for (let i = news.state.offset; i < news.jsonData.length; i++) {
+      if(i >= (news.state.number * news.state.paged) || !news.jsonData[i]) break
+      _listDiv.appendChild(news.listTopHtml(news.jsonData[i]))
+    }
+    _wrapperDiv.appendChild(_listDiv)
+    _wrapperDiv.appendChild(_prev)
+    _wrapperDiv.appendChild(_next)
+    _wrapperDiv.appendChild(_pagenation)
+    news.elem.container.appendChild(_wrapperDiv)
+  } else {
+    gsap.to(news.elem.list, {
+      opacity: 0,
+      duration: 0.1,
+      onComplete: () => { 
+        news.elem.list.innerHTML = ''
+        for (let i = news.state.offset; i < news.jsonCurrentData.length; i++) {
+          if(i >= (news.state.number * news.state.paged) || !news.jsonCurrentData[i]) break
+          if(news.state.pageType === 'news') {
+            news.elem.list.appendChild(news.listHtml(news.jsonCurrentData[i]))
+          }
         }
-      }
-      news.elem.list.style.height = ''
-      gsap.to(news.elem.list, {
-        opacity: 1,
-        duration: 0.5
-      })
-     },
-  })
+        news.elem.list.style.height = ''
+        gsap.to(news.elem.list, {
+          opacity: 1,
+          duration: 0.5
+        })
+       },
+    })
+  }
+  
 }
 
 /*
@@ -169,22 +226,26 @@ news.listHtml = function (_data) {
   const _li = document.createElement("li")
 
   let _class = ''
-  let _catText = ''
+  let _img = ''
 
+  if(!_data.img) {
+    _img = '\
+    <p class="p-news__media"><img src="/natural-water/assets/img/news/img_news_item.jpg" alt="' +_data.description+ '" class="p-news__media-img"></p>\
+    '
+  } else {
+    _img = '\
+    <p class="p-news__media"><img src="' +_data.thumbnail+ '" alt="' +_data.description+ '" class="p-news__media-img"></p>\
+    '
+  }
   _li.classList.add('p-news__item')
-  _catText = news.categorys[_data.category]
-  _catText = '<p class="p-news__tag">'+_catText+'</p>'
   _class = 'p-news__link'
 
-  const _target = (_data.link_target === 'false' || _data.link_target === 'FALSE' || _data.link_target === 'internal')? '' : ' target="_blank"'
-
 	const _inner = '\
-    <a class="' +_class+ '" href="' +_data.link_url+ '"'+_target+'>\
-      <p class="p-news__media"><img src="' +_data.thumbnail_img+ '" alt="' +_data.thumbnail_alt+ '" class="p-news__media-img"></p>\
+    <a class="' +_class+ '" href="' +_data.url+ '"target="_blank">\
+      '+ _img +'\
       <div class="p-news__detail">\
         <div class="p-news__date-tag">\
-          <p class="p-news__date">'+_data.create_date.slice(0,4)+'.'+_data.create_date.slice(5,7)+'.'+_data.create_date.slice(8,10)+'</p>\
-          ' +_catText+ '\
+          <p class="p-news__date">'+_data.date.slice(0,4)+'.'+_data.date.slice(5,7)+'.'+_data.date.slice(8,10)+'</p>\
         </div>\
         <p class="p-news__title">'+_data.title+'</p>\
       </div>\
@@ -192,6 +253,43 @@ news.listHtml = function (_data) {
   </li>'
   _li.innerHTML = _inner
   return _li
+}
+
+/*
+ ニュースリストhtml成形
+*/
+news.listTopHtml = function (_data) {
+  const _div = document.createElement("div")
+
+  let _class = ''
+  let _img = ''
+
+  if(!_data.img) {
+    _img = '\
+    <p class="p-top-news__media"><img src="/natural-water/assets/img/news/img_news_item.jpg" alt="' +_data.description+ '" width="380" height="240" class="p-top-news__img"></p>\
+    '
+  } else {
+    _img = '\
+    <p class="p-top-news__media"><img src="' +_data.thumbnail+ '" alt="' +_data.description+ '" width="380" height="240" class="p-top-news__img"></p>\
+    '
+  }
+  _div.classList.add('p-top-news__item')
+  _div.classList.add('swiper-slide')
+  _class = 'p-top-news__link'
+
+  // const _target = (_data.link_target === 'false' || _data.link_target === 'FALSE' || _data.link_target === 'internal')? '' : ' target="_blank"'
+
+	const _inner = '\
+    <a class="' +_class+ '" href="' +_data.url+ '"target="_blank">\
+      '+ _img +'\
+      <div class="p-top-news__date-tag">\
+        <p class="p-news__date">'+_data.date.slice(0,4)+'.'+_data.date.slice(5,7)+'.'+_data.date.slice(8,10)+'</p>\
+      </div>\
+      <p class="p-top-news__title">'+_data.title+'</p>\
+    </a>\
+  </li>'
+  _div.innerHTML = _inner
+  return _div
 }
 
 /*
@@ -234,5 +332,30 @@ news.yearSelect = function() {
     pagenation.disabled()
     pagenation.update()
     pagenation.numHtml()
+  });
+}
+
+news.swiperSetting = function() {
+  const swiperNews = new Swiper(".js-news-swiper", {
+    loop: false,
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    speed: 1000,
+    pagination: {
+      el: ".js-news-pagination",
+      clickable: true,
+      type: 'progressbar',
+    },
+    navigation: {
+      nextEl: ".js-news-next",
+      prevEl: ".js-news-prev"
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: "auto",
+        spaceBetween: 50,
+        centeredSlides: false,
+      }
+    }
   });
 }
